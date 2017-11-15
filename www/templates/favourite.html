@@ -1,0 +1,135 @@
+
+
+<style type="text/css">
+    .corner-ribbon-spotlight {
+    width: 200px;
+    background: #4cae4c;
+    position: absolute;
+    top: 25px;
+    left: -55px;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 1px;
+    color: black;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    }
+    .corner-ribbon-featured {
+    width: 200px;
+    background:#46b8da;
+    position: absolute;
+    top: 25px;
+    left: -55px;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 1px;
+    color: black;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    }
+    .corner-ribbon-urgent {
+    width: 200px;
+    background: #d43f39;
+    position: absolute;
+    top: 25px;
+    left: -55px;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 1px;
+    color: black;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    }
+    .add{
+    width: 50%;
+    float: left;
+    padding: 0px 5px;
+    }
+    .list.card:last-child {
+    margin-bottom: 0px;
+    }
+    .loading-container .loading {
+    background-color: #FFE6DC;
+    color: #4D301C;
+    font-style:italic;
+    font-size:19px;
+    border-width: 1px !important;
+    border-color: #FFE6DC !important;
+    border-style: solid !important;
+    }
+    .btn{
+    }
+</style>
+<ion-view style="background-color: rgb(255, 230, 220);" id="page12" title="Favourite">
+    <ion-content class="has-header" padding="true"   ng-controller="favouriteCtrl" >
+        <head>
+            <style type="text/css">
+                .custom-icon2 {
+                color :   #3390ff  ;
+                }
+                .gallery {
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                }
+            </style>
+        </head>
+        <div class="add" id="page4-card23"  ng-repeat=" x in details"  >
+            <div class="list card" id="page3-card22" ui-sref="details({id:x.id})">
+                <ion-item class="item-text-wrap">{{x.ad_title}}</ion-item>
+                <div class=" item item-image-gallery" ng-show="x.images!='[]'" style="height:150px">
+                    <img src=http://europa.promaticstechnologies.com/million/uploads/{{x.images.replace('[','').replace('"','').replace('"','').replace(']','').split(',')[0]}} width="100%" height="100%" margin="10px" padding="40px"  >
+                </div>
+                <div ng-show="x.images=='[]'">
+                    <div style="height:150px">  
+                        <img src="img/no-thumb.jpg" width="32%" height="70px" margin="10px" padding="40px">
+                    </div>
+                </div>
+                <!-- <ion-item >Description: {{x.short_description}}</ion-item> -->
+                <ion-item class="item-text-wrap">Last posted: {{x.time}}</ion-item>
+                <ion-item class="item-text-wrap" > Ad ID: {{x.ad_id}}</ion-item>
+                <ion-item class="item-text-wrap">Ad Views: {{x.views}}</ion-item>
+            </div>
+        </div>
+        <!-- <div ng-repeat="x in details" class="add"> 
+            <div class="list card" id="page3-card22" ui-sref="details({id:x.id})">
+              <div class=" item item-image-gallery" ng-show="x.images!='[]'">
+              
+                 
+                 <img src=http://europa.promaticstechnologies.com/million/uploads/{{x.images.replace('[','').replace('"','').replace('"','').replace(']','').split(',')[0]}} width="32%" height="70px" margin="10px" padding="40px"  zoom-src=http://europa.promaticstechnologies.com/million/uploads/{{x.images.replace('[','').replace('"','').replace('"','').replace(']','').split(',')[0]}} zoom-view />
+               </div> 
+            
+               <div ng-show="x.images=='[]'">
+            
+               <div class=" item item-image-gallery">  
+              
+                   <img src="img/no-thumb.jpg" width="32%" height="70px" margin="10px" padding="40px">
+               </div> </div>
+               
+               <div class="item item-body" id="page3-list-item-container1" style="">
+                   <div id="page3-null" style="margin-top:0px;color:#000000;">
+                       
+                       <span align="left" width="48%" style="padding: 10px">Last posted:{{x.time}}</span>
+            
+                 <span align="right" width="48%"> Ad ID: {{x.ad_id}}</span>
+                 <span  align="right" width="48%" style="padding: 10px">Ad Views: {{x.views}}</span>
+                   </div>
+               </div >
+             <!   <ion-item class="" id="page3-list-item12" style="">
+                   <i class="icon ion-eye" style="width:33%"></i>{{x.views}}
+                   <span ng-show="userlogin!='true'"> 
+                   <i   class="icon ion-heart"style="width:33%" ></i>{{x.likes}}</span>
+                  <span ng-show="x.like==null && userlogin=='true'"> 
+                   <i   class="icon ion-heart"style="width:33%" ng-click="like(x.id)"></i>{{x.likes}}</span>
+                   <span ng-show="x.like!=null && userlogin=='true'">
+                   <i   class="icon ion-heart"style="width:33%;color:#F68120;" ng-click="unlike(x.like.id)"></i>{{x.likes}}</span>
+                   <a style="margin-left:115px;" ng-href="#/page11/{{x.id}}">Read More >> </a>
+            
+            
+               </ion-item> -->
+        <!-- <ion-item>
+            <i class="ion-chatbubble-working color:#F68120;" style="width:33% color:#F68120;" ng-click="hat()"> Chat</i>
+            </ion-item> -->
+        <!-- </div></div> --> 
+    </ion-content>
+</ion-view>
+

@@ -1,0 +1,181 @@
+<style type="text/css">
+    .corner-ribbon-spotlight {
+          width: 200px;
+          background: #4cae4c;
+          position: absolute;
+          top: 25px;
+          left: -55px;
+          text-align: center;
+          line-height: 35px;
+          letter-spacing: 1px;
+          color: black;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+
+        .corner-ribbon-featured {
+          width: 200px;
+          background:#46b8da;
+          position: absolute;
+         top: 25px;
+          left: -55px;
+          text-align: center;
+          line-height: 35px;
+          letter-spacing: 1px;
+          color: black;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+         .corner-ribbon-urgent {
+          width: 200px;
+          background: #d43f39;
+          position: absolute;
+          top: 25px;
+          left: -55px;
+          text-align: center;
+          line-height: 35px;
+          letter-spacing: 1px;
+          color: black;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+         
+
+       
+
+
+
+</style>
+
+
+<ion-view style="background-color: rgb(245, 245, 245);" id="page16" title="Million Opportunities" >
+
+    <ion-content class="has-header" padding="true" ng-controller="millionOpportunitiesCtrl">
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/oltzLwG7QbivB73MkSJF_Home-MO3.png" height="auto" width="100%">
+        </div>
+        <div style="width: 287px; height: 31px;" class="spacer"></div>
+        <div>
+            <div style="width:100%;text-align:center;">
+                <button style="width:70%;font-size:12px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;" class="btn" ng-click="postad1()">POST ADVERTISEMENT</button>
+            </div>
+        </div>
+        <div style="width: 287px; height: 24px;" class="spacer"></div>
+        <div>
+            <div style="width:100%;">
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:14px; margin-bottom:14px;" class="btn" ng-click="filter('Events')">Events</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="btn"ng-click="filter('Jobs')"> Jobs</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:14px; margin-bottom:14px;" class="btn"ng-click="filter('Goods & Services')">Goods & Services</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="btn"ng-click="filter('Properties')">Properties</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:14px; margin-bottom:14px;" class="btn"  ng-click="filter('Missing, Lost & Found')"> Missing, Lost & Found</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="btn"ng-click="filter('Motors')">Motors</button>
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:14px; margin-bottom:14px;" class="btn" ng-click="filter('Magazines, chat, blog')">Magazines,chat,blog</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="btn" ng-click="filter('Others Deals')">Other Deals</button>
+
+              <!-- <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:14px; margin-bottom:14px;" class="btn">POST AN AD</button>
+
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="btn">POST AN AD</button>-->
+
+
+            </div>
+        </div>
+        <div>
+
+            <div style="width:100%;">
+
+                <p>
+                    Learn More
+
+                    <button style="width:40%;float:right;font-size:12px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;" class="btn" ui-sref="manageAds">Customize</button>
+
+                </p>
+            </div>
+        </div>
+         <div ng-repeat="x in details"> 
+         <div class="list card" id="page3-card22">
+            <div class=" item item-image">
+                <div class="corner-ribbon-urgent" ng-show="x.urgent !='' ">Urgent</div>
+                <div class="corner-ribbon-spotlight" ng-show="x.spolight !='' ">Spotlight</div>
+                <div class="corner-ribbon-featured" ng-show="x.featured !=''">Featured</div>
+               
+                
+                <img src=http://europa.promaticstechnologies.com/million/uploads/{{x.images.replace('[','').replace('"','').replace('"','').replace(']','')}} style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+            </div>
+            
+            <div class="item item-body" id="page3-list-item-container1" style="">
+                <div id="page3-null" style="margin-top:0px;color:#000000;">
+                    <h2>{{x.ad_title}}
+                    </h2>
+                    <i class="ion-pricetags"> {{x.category}}</i>
+                    <p>{{x.short_description}}</p>
+                </div>
+            </div >
+            <ion-item class="" id="page3-list-item12" style="">
+                <i class="icon ion-eye" style="width:33%"></i>{{x.views}}
+                <span ng-show="userlogin!='true'"> 
+                <i   class="icon ion-heart"style="width:33%" ></i>{{x.likes}}</span>
+               <span ng-show="x.like==null && userlogin=='true'"> 
+                <i   class="icon ion-heart"style="width:33%" ng-click="like(x.id)"></i>{{x.likes}}</span>
+                <span ng-show="x.like!=null && userlogin=='true'">
+                <i   class="icon ion-heart"style="width:33%;color:#F68120;" ng-click="unlike(x.like.id)"></i>{{x.likes}}</span>
+                <a style="margin-left:115px;" ng-href="#/page11/{{x.id}}">Read More >> </a>
+
+
+            </ion-item>
+             <ion-item>
+                  <i class="ion-chatbubble-working color:#F68120;" style="width:33% color:#F68120;" ng-click="chat()"> Chat</i>
+             </ion-item>
+        </div></div>
+
+
+       <!-- <div style="width: 287px; height: 11px;" class="spacer"></div>
+        <div>
+            <div style="background-color:#eee; width:100%;">
+
+
+                <div style="background-color:#fff; border-radius:10px; width:47%;float:left; padding:10px;margin-right:15px;margin-bottom:15px;box-shadow:1px 1px 1px rgba(0,0,0,0.5);">
+
+                    <p>2009 model Honda Bike</p>
+                    <p>
+                        <small>Lorem psum asasd</small>
+                    </p>
+                </div>
+
+                <div style="background-color:#fff; border-radius:10px; width:47%;float:left; padding:10px;margin-bottom:15px;box-shadow:1px 1px 1px rgba(0,0,0,0.5);">
+
+                    <p>2009 model Honda Bike</p>
+                    <p>
+                        <small>Lorem psum asasd</small>
+                    </p>
+                </div>
+
+
+
+                <div style="background-color:#fff; border-radius:10px; width:47%;float:left; padding:10px;margin-right:15px;margin-bottom:15px;box-shadow:1px 1px 1px rgba(0,0,0,0.5);">
+
+                    <p>2009 model Honda Bike</p>
+                    <p>
+                        <small>Lorem psum asasd</small>
+                    </p>
+                </div>
+
+                <div style="background-color:#fff; border-radius:10px; width:47%;float:left; padding:10px;margin-bottom:15px;box-shadow:1px 1px 1px rgba(0,0,0,0.5);">
+
+                    <p>2009 model Honda Bike</p>
+                    <p>
+                        <small>Lorem psum asasd</small>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>-->
+       
+    </ion-content>
+</ion-view>

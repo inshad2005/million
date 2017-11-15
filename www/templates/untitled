@@ -1,0 +1,4 @@
+
+
+
+/home/promatics/android-sdk-linux/build-tools/23.0.3/zipalign -v 4 android-release-unsigned.apk YellowSuppliers.apk

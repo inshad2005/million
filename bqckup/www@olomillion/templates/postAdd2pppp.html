@@ -1,0 +1,65 @@
+<ion-view style="background-color: rgb(245, 245, 245);" id="page132" title="PostAdd">
+    <ion-content padding="true" class="has-header" ng-controller="postAddCtrl2">
+        <form class="list" id="postAdd-form1">
+        
+         <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Image</font></p>
+            <ion-item style="" id="postAdd-list-item9" class="item-icon-left">
+                <i class="icon ion-camera"style="background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border-radius:20%; border:none;color:#fff;padding:5px;"  ></i>
+               <button class = "button" ng-click = "takePicture()">Take Picture</button>
+               <button class = "button" ng-click = "pickimages()">Open Gallery</button>
+              
+                
+ </ion-item>
+<p>Add a Youtube video Link.</p>
+ <div class="item item-input-inset">
+
+      <label class="item item-input-wrapper">       
+      <input type="text" placeholder="https://www.youtube.com/5a1f51c2asc646" ng-model="youtubelink">
+      </label>
+   </div>
+   
+    <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Description</font></p>
+<textarea placeholder="Add description here" style="border:1px solid #ddd; width:100%" ng-model="longdescription"></textarea>
+<p>10000 characters remaining (12 words minimum).
+
+Enter as much information possible; ads with detailed and longer descriptions get more views and replies!</p></form>
+
+	 <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Website Link</font></p>
+	 <input type="checkbox">Include a link to your website for $5. 
+	 <div>
+     
+      <input type="text" style="border:1px solid #ddd; width:100%" ng-model="websitelink" >
+      
+   </div>
+
+<div ng-model="promotead">
+	  <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Select an option to promote your ad. </font></p>
+	
+
+	 <input type="checkbox" ng-model="urgent" >Urgent <p style="text-align:right;">7 days - $8</p>
+	 <br>
+	 <input type="checkbox" ng-model="featured">Featured <select><option>7 days - $8</option>
+	 <option>15 days - $15</option>
+	 <option>30 days - $28</option></select>
+	 <br>
+	 
+	 <input type="checkbox" ng-model="spotlight">Spotlight<p style="text-align:right;">7 days - $8</p>
+	 <br>
+	 <input type="checkbox" ng-model="all">Select all above <p>Let people know you want to sell, rent or hire quickly.   </p></div>
+
+
+	<button style="width:100%;font-size:15px;text-align:left; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;" class="button button-small button-full">Your contact details </button>
+	<p> Please select at least one option to be contacted by: </p>
+	<input type="checkbox" > Email :{{email}}
+	<br>
+	<input type="checkbox" align="left">Contact No.<input type="text" style="border:1px solid #ddd; width:100%" placeholder="Contact No" align="right" ng-model="contactno"> 
+	 <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#808080;"><font color="white">Total</font></p></form>
+	<p style="background-color:	#808080;">By clicking 'Post my ad', you agree to Million Opportunitie's terms of use, privacy policy and posting rules. </p>
+	<!--<button style="width:30%;font-size:15px;text-align:left; background-color:#F68120;" class="button button-small" ng-click="post()">Post my ad</button>-->
+
+		<div style="width:100%;text-align:center;">
+                <button style="width:70%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin-top:20px;" class="btn" ng-click="post()">Post my ad</button>
+            </div>
+</form>
+ </ion-content>
+ </ion-view>

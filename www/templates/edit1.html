@@ -1,0 +1,285 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page13" title="Edit PostAdd">
+    <ion-content padding="true" class="has-header" ng-controller="editpostAddCtrl"
+        >
+        <form  name="postaddform" class="list" id="postad-form1" ng-submit="" class="list" 
+            method="post" novalidate>
+            <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                    <i class="icon ion-android-arrow-dropdown-circle"></i> Choose Category
+                </ion-item>
+                <label class="item item-select" id="page-select1">
+                    <span class="input-label">Category</span>
+                    <select  ng-model="editdata.category">
+                        <option value="Events">Events</option>
+                        <option value="Jobs">Jobs</option>
+                        <option value="Goods & Services">Goods & Services</option>
+                        <option value="Properties">Properties</option>
+                        <option value="Missing, Lost & Found">Missing, Lost & Found</option>
+                        <option value="Motors">Motors</option>
+                        <option value="Magazines, chat, blog">Magazines, chat, blog</option>
+                        <option value="Others Deals">Others Deals</option>
+                    </select>
+                </label>
+                <label class="item item-select" id="page-select2">
+                    <span class="input-label">Sub Category</span>
+                    <select  ng-model="editdata.subcategory" >
+                        <option ng-if="editdata.category=='Events'">Music and Entertainment </option>
+                        <option ng-if="editdata.category=='Events'">Religious </option>
+                        <option ng-if="editdata.category=='Events'">Sports</option>
+                        <option ng-if="editdata.category=='Events'">Educational </option>
+                        <option ng-if="editdata.category=='Events'">Political </option>
+                        <option ng-if="editdata.category=='Events'">Art and Culuture </option>
+                        <option ng-if="editdata.category=='Events'">Social </option>
+                        <option ng-if="editdata.category=='Events'">Others </option>
+                        <option ng-if="editdata.category=='Jobs'">Accountancy</option>
+                        <option ng-if="editdata.category=='Jobs'">Administration </option>
+                        <option ng-if="editdata.category=='Jobs'">Advertising </option>
+                        <option ng-if="editdata.category=='Jobs'">Aerospace/Aviation </option>
+                        <option ng-if="editdata.category=='Jobs'">Agriculture </option>
+                        <option ng-if="editdata.category=='Jobs'">Architecture </option>
+                        <option ng-if="editdata.category=='Jobs'">Art/Design/Graphics </option>
+                        <option ng-if="editdata.category=='Jobs'">Automotive </option>
+                        <option ng-if="editdata.category=='Jobs'">Banking </option>
+                        <option ng-if="editdata.category=='Jobs'">Biotechnology </option>
+                        <option ng-if="editdata.category=='Jobs'">Catering & Food services </option>
+                        <option ng-if="editdata.category=='Jobs'">Charity/Voluntary/Non-profit </option>
+                        <option ng-if="editdata.category=='Jobs'">Construction </option>
+                        <option ng-if="editdata.category=='Jobs'">Consultancy </option>
+                        <option ng-if="editdata.category=='Jobs'">Couselling </option>
+                        <option ng-if="editdata.category=='Jobs'">Customer service </option>
+                        <option ng-if="editdata.category=='Jobs'">Dental </option>
+                        <option ng-if="editdata.category=='Jobs'">Driving </option>
+                        <option ng-if="editdata.category=='Jobs'">Education </option>
+                        <option ng-if="editdata.category=='Jobs'">Electrical </option>
+                        <option ng-if="editdata.category=='Jobs'">Emergency </option>
+                        <option ng-if="editdata.category=='Jobs'">Engineering </option>
+                        <option ng-if="editdata.category=='Jobs'">Entertainment </option>
+                        <option ng-if="editdata.category=='Jobs'">Fashion </option>
+                        <option ng-if="editdata.category=='Jobs'">Financial </option>
+                        <option ng-if="editdata.category=='Jobs'">Graduate </option>
+                        <option ng-if="editdata.category=='Jobs'">Health and safety </option>
+                        <option ng-if="editdata.category=='Jobs'">Healthcare and medical </option>
+                        <option ng-if="editdata.category=='Jobs'">Home worker </option>
+                        <option ng-if="editdata.category=='Jobs'">Childcare </option>
+                        <option ng-if="editdata.category=='Jobs'">Hotel / hospitality </option>
+                        <option ng-if="editdata.category=='Jobs'">Human resources and employment</option>
+                        <option ng-if="editdata.category=='Jobs'">IT/Internet/Technical </option>
+                        <option ng-if="editdata.category=='Jobs'">Import Export </option>
+                        <option ng-if="editdata.category=='Jobs'">Industrial </option>
+                        <option ng-if="editdata.category=='Jobs'">Insuarance </option>
+                        <option ng-if="editdata.category=='Jobs'">Journalism </option>
+                        <option ng-if="editdata.category=='Jobs'">Legal </option>
+                        <option ng-if="editdata.category=='Jobs'">Leisure </option>
+                        <option ng-if="editdata.category=='Jobs'">Management & Executive </option>
+                        <option ng-if="editdata.category=='Jobs'">Manufacturing </option>
+                        <option ng-if="editdata.category=='Jobs'">Marketing & Public relations </option>
+                        <option ng-if="editdata.category=='Jobs'">Mechanical </option>
+                        <option ng-if="editdata.category=='Jobs'">Media/Creative/Digital </option>
+                        <option ng-if="editdata.category=='Jobs'">Nursing </option>
+                        <option ng-if="editdata.category=='Jobs'">Oil & Gas/Energy </option>
+                        <option ng-if="editdata.category=='Jobs'">Other </option>
+                        <option ng-if="editdata.category=='Jobs'">Packaging </option>
+                        <option ng-if="editdata.category=='Jobs'">Pharmaceutical </option>
+                        <option ng-if="editdata.category=='Jobs'">Photography </option>
+                        <option ng-if="editdata.category=='Jobs'">Printing </option>
+                        <option ng-if="editdata.category=='Jobs'">Property </option>
+                        <option ng-if="editdata.category=='Jobs'">Public sector </option>
+                        <option ng-if="editdata.category=='Jobs'">Publishing </option>
+                        <option ng-if="editdata.category=='Jobs'">Purchasing </option>
+                        <option ng-if="editdata.category=='Jobs'">Recruitment </option>
+                        <option ng-if="editdata.category=='Jobs'">Retail </option>
+                        <option ng-if="editdata.category=='Jobs'">Sales </option>
+                        <option ng-if="editdata.category=='Jobs'">Sciencetific </option>
+                        <option ng-if="editdata.category=='Jobs'">Secretarial & PA </option>
+                        <option ng-if="editdata.category=='Jobs'">Security </option>
+                        <option ng-if="editdata.category=='Jobs'">Social services </option>
+                        <option ng-if="editdata.category=='Jobs'">Teaching </option>
+                        <option ng-if="editdata.category=='Jobs'">Telecomms </option>
+                        <option ng-if="editdata.category=='Jobs'">Textiles </option>
+                        <option ng-if="editdata.category=='Jobs'">Trades-Skilled and unskilled </option>
+                        <option ng-if="editdata.category=='Jobs'">Transports &Logistics </option>
+                        <option ng-if="editdata.category=='Jobs'">Travel and tourism </option>
+                        <option ng-if="editdata.category=='Jobs'">Utilities and unstalation </option>
+                        <option ng-if="editdata.category=='Jobs'">Warehouse</option>
+                        <option ng-if="editdata.category=='Jobs'">Waste management </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Fashion </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Electronics </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Health & Beauty </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Food and beverages </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Education </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Childcare </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Wedding </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Repair </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Business and management </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Accounts </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Legal services </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Administration </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Information technology </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Entertainment</option>
+                        <option ng-if="editdata.category=='Goods & Services'">Supply of Goods & Services </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Animals </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Propery and maintainance </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Trademen and construction </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Transport and communication </option>
+                        <option ng-if="editdata.category=='Goods & Services'">Tourism </option>
+                        <option ng-if="editdata.category=='Properties'">For sale </option>
+                        <option ng-if="editdata.category=='Properties'">To Rent </option>
+                        <option ng-if="editdata.category=='Properties'">To Share </option>
+                        <option ng-if="editdata.category=='Properties'">To offer </option>
+                        <option ng-if="editdata.category=='Properties'">Houses /Apartments </option>
+                        <option ng-if="editdata.category=='Properties'">Homes </option>
+                        <option ng-if="editdata.category=='Properties'" >Students hostels</option>
+                        <option ng-if="editdata.category=='Properties'">Students hostels</option>
+                        <option ng-if="editdata.category=='Properties'">Students hostels</option>
+                        <option ng-if="editdata.category=='Properties'">Land / Plots </option>
+                        <option ng-if="editdata.category=='Properties'">Shops </option>
+                        <option ng-if="editdata.category=='Properties'">Events & Sales </option>
+                        <option ng-if="editdata.category=='Properties'">Others </option>
+                        <option ng-if="editdata.category=='Missing, Lost & Found'">Missing </option>
+                        <option ng-if="editdata.category=='Missing, Lost & Found'">Lost </option>
+                        <option ng-if="editdata.category=='Missing, Lost & Found'">Found </option>
+                        <option ng-if="editdata.category=='Missing, Lost & Found'">Others Dealss </option>
+                        <option ng-if="editdata.category=='Motors'" value="car">Car </option>
+                        <option ng-if="editdata.category=='Motors'" value="motorcycles">Motocycles </option>
+                        <option ng-if="editdata.category=='Motors'" value="vehicles">Vehicles </option>
+                        <option ng-if="editdata.category=='Motors'" value="car accessories and parts">Cars accessories and Parts </option>
+                        <option ng-if="editdata.category=='Motors'" value="garage">Garage </option>
+                        <option ng-if="editdata.category=='Motors'"  value="events and sales">Events and sales </option>
+                        <option ng-if="editdata.category=='Motors'" value="motor deals">Motor deals </option>
+                        <option ng-if="editdata.category=='Magazines, chat, blog'">Magazines, chat, blog </option>
+                        <option ng-if="editdata.category=='Others Deals'">Others Deals </option>
+                    </select>
+                </label>
+            </div>
+            <div id="postadd-card23" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                    <i class="icon ion-ios-location"></i>Location
+                </ion-item>
+                <label> 
+                <textarea placeholder="Address" ng-model="editdata.address" style="border:1px solid #ddd; width:100%"></textarea>
+                </label>
+                <ion-list id="postadd-list1">
+                    <label id="postadd-input1" class="item item-input" ng-class="{ 'has-error' : postaddform.pincode.$invalid && !postaddform.pincode.$pristine }">
+                    <input type="text" name="pincode" class="item item-input" placeholder="pincode" ng-model="editdata.postal_code" required>
+                    </label>
+            </div>
+            <div id="postadd-card23" class="list card">
+            <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+            <i class="icon ion-social-pinterest"></i>Seller Type</ion-item>
+            <ion-radio value="trade" value="trade" ng-model="editdata.seller_type" checked>Trade</ion-radio>
+            <ion-radio value="private" value="private" ng-model="editdata.seller_type" >Private</ion-radio>
+            </div>
+            <!--  <div id="postadd-card23" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                      <i class="icon ion-ios-albums"></i>Add Posting</ion-item>
+                
+                      </div> -->
+            <div id="postadd-card23" class="list card"  ng-show="editdata.subcategory=='car'||editdata.subcategory=='motorcycles'||editdata.subcategory=='vehicles'">
+            <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+            <i class="icon ion-information"></i>Vehicle Specification</ion-item>
+            <label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type.$invalid && !postaddform.type.$pristine }">
+            <span class="input-label">Make</span>
+            <select class="form-control" name="type" ng-model="editdata.v_make" required>
+            <option>Alpha Romeo</option>
+            <option>Aston Martin</option>
+            <option>Audi</option>
+            <option>Cadillac</option>
+            <option>Chevy</option>
+            <option>Ferrari</option>
+            <option>Ford</option>
+            <option>Range Rover</option>
+            </select>
+            </label>
+            <p ng-show="postaddform.type.$invalid && !postaddform.type.$pristine"><font color="red">Select atleast one option.</font></p>
+            <label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type.$invalid && !postaddform.type.$pristine }">
+            <span class="input-label">year</span>
+            <select class="form-control" name="type" ng-model="editdata.v_purchase_year" required>
+            <option>2016</option>
+            <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+            <option>2012</option>
+            <option>2011</option>
+            </select>
+            </label>
+            <p ng-show="postaddform.type.$invalid && !postaddform.type.$pristine"><font color="red">Select atleast one option.</font></p>
+            <label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type.$invalid && !postaddform.type.$pristine }">
+            <span class="input-label">Fuel Type</span>
+            <select class="form-control" name="type" ng-model="edit.fuel_type" required>
+            <option>Diesel</option>
+            <option>Electric</option>
+            <option>Gas</option>
+            <option>Hybrid Electric</option>
+            <option>Petrol</option>
+            <option>Other</option>
+            </select>
+            </label>
+            <p ng-show="postaddform.type.$invalid && !postaddform.type.$pristine"><font color="red">Select atleast one option.</font></p>
+            <label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type.$invalid && !postaddform.type.$pristine }">
+            <span class="input-label">Body Type</span>
+            <select class="form-control" name="type" ng-model="editdata.v_body_type" required>
+            <option>Mini Bus</option>
+            <option>Pick Up</option>
+            <option>Panel Van</option>
+            <option>Sports</option>
+            <option>Saloon</option>
+            <option>Others</option>
+            </select>
+            </label>
+            <p ng-show="postaddform.type.$invalid && !postaddform.type.$pristine"><font color="red">Select atleast one option.</font></p>
+            <label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type.$invalid && !postaddform.type.$pristine }">
+            <span class="input-label">Transmission</span>
+            <select class="form-control" name="type" ng-model="editdata.transmission" required>
+            <option>Automatic</option>
+            <option>Manual</option>
+            <option>Semi-Auto</option>
+            <option>Hybrid Electric</option>
+            <option>Others</option>
+            </select>
+            </label>
+            <p ng-show="postaddform.type.$invalid && !postaddform.type.$pristine"><font color="red">Select atleast one option.</font></p>
+            <label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.model.$invalid && !postaddform.model.$pristine }">
+            <input placeholder="model" type="text"class="form-control" name="model" 
+                ng-model="editdata.model" required>
+            </label>
+            <p ng-show="postaddform.model.$invalid && !postaddform.model.$pristine" placeholder="model"><font color="red">Model is required.</font></p> 
+            <label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.color.$invalid && !postaddform.color.$pristine }">
+            <input placeholder="Color" type="text"class="form-control" name="color" 
+                ng-model="editdata.color" required>
+            </label>
+            <p ng-show="postaddform.color.$invalid && !postaddform.color.$pristine" placeholder="color"><font color="red"> color is required.</font></p>
+            <label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.Engine_Size.$invalid && !postaddform.Engine_Size.$pristine }">
+            <input placeholder="Engine Size(cc)" type="text"class="form-control" name="Engine_Size" 
+                ng-model="editdata.engine_size" required>
+            </label>
+            <p ng-show="postaddform.Engine_Size.$invalid && !postaddform.Engine_Size.$pristine" placeholder="Engine_Size"><font color="red">Engine Size is required.</font></p>
+            <label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.Mileage.$invalid && !postaddform.Mileage.$pristine }">
+            <input placeholder="Mileage" type="text"class="form-control" name="Mileage" 
+                ng-model="editdata.mileage" required>
+            </label>
+            <p ng-show="postaddform.Mileage.$invalid && !postaddform.Mileage.$pristine" placeholder="Mileage"><font color="red">Mileage Name is required.</font></p> </div>
+            <div id="postadd-card24" class="list card">
+            <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+            <i class="icon ion-chevron-down"></i>Add Title</ion-item>
+            <label id="postadd-input15" class="item item-input item-wrapper"ng-class="{ 'has-error' : postaddform.title.$invalid && !postaddform.title.$pristine }">
+            <input placeholder="title" type="text" class="form-control" name="title" 
+                ng-model="editdata.ad_title" required>
+            </label>
+            <p ng-show="postaddform.title.$invalid && !postaddform.title.$pristine" placeholder="title"><font color="red">title Name is required.</font></p>
+            <label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.short_description.$invalid && !postaddform.short_description.$pristine }">
+            <input placeholder="short description" type="text"class="form-control" name="short_description" 
+                ng-model="editdata.short_description" required>
+            </label>
+            <p ng-show="postaddform.short_description.$invalid && !postaddform.short_description.$pristine" placeholder="short_description"><font color="red">short description is required.</font></p>
+            </div>             
+            <div>
+            <button class="button button-balanced button-small button-block" id="postadd-button9"  ng-click="next(editdata.category)" style="width:100%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin-top:20px;" >Next</button>
+            </div>
+            </ion-list>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+

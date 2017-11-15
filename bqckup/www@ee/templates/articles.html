@@ -1,0 +1,110 @@
+<!-- firstly use <ion-view title="articles" id="page1" style="">
+  <ion-content padding="true" class="has-header" ng-controller="ArticleCtrl">
+   <div ng-repeat="article in articles">  
+	<div>
+      <img src="http://europa.promaticstechnologies.com/zportix/img/ArticleImages/{{article.image[0].image}}" style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+    </div>
+	<h4 id="page-heading1" style="color: rgb(0, 0, 0);" ui-sref="app.detail({id: article.id})"><a href="Javascript:void(0);">{{article.title}}</a></h4>
+    <div id="page-markdown4">
+      <p style="color:#000000;" ng-click="first()">{{article.short_description}}</p>
+    </div>
+    <button class="button button-small button-positive" ng-click="art()" style="background-color:#892886">Action</button>
+     <button class="button button-small button-positive" ui-sref="app.comment({id: article.id})" style="background-color:#892886">comment</button>
+     <button class="button button-small button-positive" ui-sref="app.seeComment({id:article.id})" style="background-color:#892886">see comment</button>
+
+
+    <div ng-repeat="details in detail" ng-bind-html="details.description"> </div>
+    
+
+	</div>
+
+  </ion-content>
+</ion-view>-->
+
+
+
+<style>
+h1 { color: #ffffff; font-family: 'Lato', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px; }
+
+p { color: #adb7bd;text-align: justify; font-family: 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
+
+a { color: #fe921f; text-decoration: underline; }
+
+a:hover { color: #892886 }
+
+.section{
+ border-bottom: 1px solid #892886;
+ margin-bottom: 10px;
+}
+
+.date { float:right
+}
+</style>
+<ion-view title="articles" class="playstore" id="page1"  >
+<div class="bar bar-header bar-light" >
+           <button class="button-icon icon ion-ios-arrow-back" ng-click="back()"> Back</button>
+          <h1 class="title">Forget Password</h1>
+      </div>
+  <ion-content padding="true" ng-controller="ArticleCtrl">
+   <img class="cover-img" src="img/background.png" height="150px" width="100%" />
+   <div id="forum2-button-bar1" class="button-bar">
+      <button id="forum2-button13" class="button button-positive  button-clear" style="background-color:white " ui-sref="app.home"><font color="black" >Start</font></button>
+      <button id="forum2-button14" class="button button-positive  button-clear" style="background-color:white" ui-sref="app.forum({id: articles[0].id})"><font color="black" >Forum</font></button>
+    </div>
+
+   <div ng-repeat="article in articles">  
+<div class="item item-avatar">
+      <img src="http://europa.promaticstechnologies.com/zportix/img/ArticleImages/{{article.image[0].image}}" style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+      <h2 id="page-heading1" style="color: rgb(0, 0, 0);" ui-sref="app.detail({id: article.id})"><a href="Javascript:void(0);">{{article.title}}</a></h2>
+    </div>
+
+    
+<div class="item item-body"> 
+  
+    <img class="full-image" src="http://europa.promaticstechnologies.com/zportix/img/ArticleImages/{{article.image[0].image}}">
+    <p>{{article.short_description}}....</p>
+ <p>
+      <a href="#" class="subdued">{{article.view}}Views</a>
+      <a href="#" class="subdued" ui-sref="app.seeComment({id:article.id})">{{article.count}} Comments</a>
+      
+    </p>
+ 
+</div>
+
+
+
+
+<div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" ui-sref="app.detail({id: article.id})">
+      <i class="icon ion-eye"></i>
+      View
+    </a>
+    <a class="tab-item" href="#" ui-sref="app.seeComment({id:article.id})">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" ng-click="share(article.title,article.short_description)">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+  </div>
+</div>
+
+
+  </ion-content>
+</ion-view>
+
+
+  
+   <!-- <div id="page-markdown4">
+      <p style="color:#000000;" ng-click="first()">{{article.short_description}}</p>
+    </div>
+    <button class="button button-small button-positive" ng-click="art()" style="background-color:#892886">Action</button>
+     <button class="button button-small button-positive" ui-sref="app.comment({id: article.id})" style="background-color:#892886">comment</button>
+     <button class="button button-small button-positive" ui-sref="app.seeComment({id:article.id})" style="background-color:#892886">see comment</button>
+
+
+    <div ng-repeat="details in detail" ng-bind-html="details.description"> </div>-->
+    
+
+ 

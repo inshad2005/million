@@ -1,0 +1,135 @@
+
+
+<script id="my-popover.html" type="text/ng-template">
+    <ion-popover-view class="pop"  style="background-color: rgb(255, 230, 220);width:95%;height:100%;">
+    <ion-header-bar class="bar bar-header" align-title="center" style="background-color:#4D301C;font-size:35px; color:#FFFFFF" ng-controller="detailsCtrl" >
+    
+    <!--  class="bar bar-header bar-positive"> -->
+         <button class="button ion-android-share-alt" style="background-color:#4D301C;color:#FFFFFF" ng-click="shareAnywhere(detailsdata.description,detailsdata.ad_title,imageurl)"></button>
+    
+        <i class="title" style="background-color:#4D301C;color:#FFFFFF;font-size: 19px;">Image</i>
+    
+       <button class="button  icon ion-close-circled" style="background-color:#4D301C; font-size: 35px; color:#FFFFFF" ng-click="cancel()" ></button> 
+    
+    
+    </ion-header-bar> 
+      <ion-content ng-controller="detailsCtrl" class="has-header" padding="true">
+        <div style="padding:10px 20px;">
+            
+             <form  name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+                  <title ></title>
+                   <img ng-src=http://europa.promaticstechnologies.com/million/uploads/{{imageurl}} width="100%" height="auto" margin="10px" padding="40px"  ">
+                 
+                 <!-- <div ng-repeat="item in invite |  filter: searchUsers">
+                      <ul class="list">
+                         <li class="item item-checkbox"  >
+                                 {{item.session_name}}
+                            <label class="checkbox">
+                               <input type="checkbox" ng-checked="master"  ng-model="item.SELECTED"  ng-true-value="1" ng-false-value="0">
+                            </label>
+                          </li>
+                        </ul>
+                        </div> 
+                  <button class="button button-positive button-small button-outline " id="inviteUsers-button10" ng-click="popover.hide()" style="width:48%;" >Cancel</button>
+                  <input type="submit" value="Send Invite" class="button button-positive button-small button-outline 
+                  icon ion-android-send" id="inviteUsers-button10" style="width:48%;" ng-click="sendinvite(invite)" ng-disabled="userForm.$invalid"></div> -->
+          </form>
+         </div>
+      </ion-content>
+    </ion-popover-view>
+</script>
+<style type="text/css">
+    .gallery {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    }
+</style>
+<ion-view style="background-color: rgb(255, 230, 220);" id="page11" title="Details">
+    <ion-content class="has-header" padding="true" ng-controller="detailsCtrl">
+        <head>
+            <style type="text/css">
+                .icon4 {
+                font-size: 30px;
+                }
+            </style>
+        </head>
+        <div>
+            <div class="list card" id="page3-card22">
+                <div id="page3-null" style="margin-top:0px;color:#000000;">
+                    <h5 style="padding: 10px">{{detailsdata.ad_title}}
+                    </h5>
+                    <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:10px;margin-left:4px; margin-bottom:14px;" class="icon ion-android-share-alt" ng-click="shareAnywhere(detailsdata.short_description,detailsdata.ad_title,detailsdata.images)"> Share </button>
+                    <span ng-show=" detailsdata.favourite==null && emailcheck!=null">
+                    <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="icon ion-android-star-outline" ng-click="addfavorite(detailsdata.id)"> Add to favorite </button></span>
+                    <span ng-show="detailsdata.favourite!=null&& emailcheck!=null">
+                    <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" ng-click="removefavorite(detailsdata.favourite.id)"> <i class='icon ion-android-star-outline' style="color:#F68120" ></i> Add to favorite </button></span>
+                </div>
+                <div class="card card-list" >
+                    <span ng-repeat="slide in imagedata" >
+                        <!--<img src="{{image}}" width="150px">
+                            <img src=http://europa.promaticstechnologies.com/million/uploads/{{image.replace('[','').replace('"','').replace('"','').replace(']','')}} width="90px" height="70px" ng-click="zoom(image)"> -->
+                        <!--   <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" id="details-slider1" style="width:100%;height:200px;">
+                            <ion-slide-page id="details-slide24" style="background:url(http://europa.promaticstechnologies.com/million/uploads/{{imagedata[0]}}) no-repeat center;background-size:cover;"></ion-slide-page>
+                            <ion-slide-page id="details-slide25" style="background:url(http://europa.promaticstechnologies.com/million/uploads/{{slide+$index+1}}) no-repeat center;background-size:cover;"></ion-slide-page>
+                            <ion-slide-page id="details-slide26" style="background:url(img/WE6rB9dZRTiIWQlP5qsA_kitten3.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
+                            </ion-slides> -->
+                        <img ng-src=http://europa.promaticstechnologies.com/million/uploads/{{slide}} width="32%" height="70px" margin="10px" padding="40px"  ng-click="openPopover($event,slide)">
+                        <!-- <img ng-src=http://europa.promaticstechnologies.com/million/uploads/{{slide.replace('[','').replace('"','').replace('"','').replace(']','')}} width="32%" height="70px" margin="10px" padding="40px"  zoom-src=http://europa.promaticstechnologies.com/million/uploads/{{slide.replace('[','').replace('"','').replace('"','').replace(']','')}} zoom-view /> -->
+                    </span>
+                </div>
+                <div ng-show="detailsdata.images=='[]'">
+                    <div class=" item item-image">  
+                        <img src="img/no-thumb.jpg" style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+                    </div>
+                </div>
+                <div class="item item-body" id="page3-list-item-container1">
+                    <div id="page3-null" style="margin-top:0px;;">
+                        <h2>About Ad
+                        </h2>
+                        </hr>
+                        <!--  <table><tr style="width:100%"><td style="width:33%;">Posted</td>  <td style="width:33%">Postal Code </td> <td style="width:33%">Seller Type</td></tr>
+                            <tr style="width:100%"><td style="width:33%;padding-right:10px" >{{timedata}}</td><td style="width:33%">{{detailsdata.postal_code}}</td><td style="width:33%">{{detailsdata.seller_type}}</td></tr></table>-->
+                        <ion-list id="list12">
+                            <ion-item  >Posted: {{timedata}} </ion-item>
+                            <!-- <ion-item  >Postal Code: {{detailsdata.postal_code}}</ion-item> -->
+                            <ion-item ng-hide="detailsdata.v_make==''|| detailsdata.v_make== 'null' ||detailsdata.v_make== null" >Make: {{detailsdata.v_make}} </ion-item>
+                            <ion-item ng-hide="detailsdata.model== ''|| detailsdata.model== 'null' || detailsdata.model==null"  >Model: {{detailsdata.model}}</ion-item>
+                            <ion-item  ng-hide="detailsdata.v_purchase_year== '' || detailsdata.v_purchase_year== 'null' || detailsdata.v_purchase_year==null" >Year: {{detailsdata.v_purchase_year}} </ion-item>
+                            <ion-item  ng-hide="detailsdata.mileage== '' || detailsdata.mileage==null  || detailsdata.mileage=='null'" >Mileage: {{detailsdata.mileage}}</ion-item>
+                            <ion-item  ng-hide="detailsdata.seller_type== '' || detailsdata.seller_type= 'null' || detailsdata.seller_type==null" >Seller Type: {{detailsdata.seller_type}}</ion-item>
+                            <ion-item  ng-hide="detailsdata.v_body_type== '' || detailsdata.v_body_type==null || detailsdata.v_body_type=='null'" >Body Type: {{detailsdata.v_body_type}} </ion-item>
+                            <ion-item  ng-hide="detailsdata.fuel_type== '' || detailsdata.fuel_type== 'null' || detailsdata.fuel_type==null" >Fuel Type: {{detailsdata.fuel_type}}</ion-item>
+                            <ion-item  ng-hide="detailsdata.transmission== '' || detailsdata.transmission== 'null' || detailsdata.transmission== null" >Transmission: {{detailsdata.transmission}} </ion-item>
+                            <ion-item  ng-hide="detailsdata.color== '' || detailsdata.color==null || detailsdata.color== 'null'" >Color: {{detailsdata.color}}</ion-item>
+                            <ion-item  ng-hide="detailsdata.engine_size== '' || detailsdata.engine_size== 'null' || detailsdata.engine_size== null" >Engine Size: {{detailsdata.engine_size}} </ion-item>
+                            <ion-item  ng-hide="detailsdata.price== '' || detailsdata.price=='null' || detailsdata.price==null">Price: {{detailsdata.price}} </ion-item>
+                            <ion-item  ng-hide="detailsdata.web_link=='' || detailsdata.web_link=='null' || detailsdata.web_link ==null" >Website: {{detailsdata.web_link}} </ion-item>
+                            <ion-item ng-hide="detailsdata.video_link=='' || detailsdata.video_link=='null' || detailsdata.video_link ==null" >
+                                <div class="video-container">
+                                    <iframe src="{{detailsdata.video_link |  trustAsResourceUrl}}" frameborder="0" width="100%" height="150"></iframe>
+                                </div>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </div>
+                <div class="item item-text-wrap item-left">Description : 
+                    {{detailsdata.description}}
+                </div>
+                <div id="page3-null" style="margin-top:0px;" class="item item-text-wrap">
+                    <div class="item item-icon-left"><i class="icon ion-man icon4"></i> Ad Posted By : {{detailsdata.address}}</div>
+                    <a class="item item-icon-left" ng-href="tel:{{detailsdata.contact_no}}"><i class="icon ion-android-call"></i>Call Us:  {{detailsdata.contact_no}}  </a><br>
+                    <a class="item item-icon-left " ng-click="sendMail(detailsdata.email_id)"><i class="icon ion-ios-email"></i>Email:  {{detailsdata.email_id}}</a><br>
+                    <a class="item item-icon-left" ng-click="openInExternalBrowser('www.google.com/maps/place/'+detailsdata.address+', {{detailsdata.postal_code}}')"> <i class="icon ion-android-map"></i>Address:  {{detailsdata.postal_code}}</a><br>
+                    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{detailsdata.postal_code}}&zoom=13&scale=false&size=400x200&maptype=roadmap&format=png&visual_refresh=true" width="100%" ng-click="openInExternalBrowser('www.google.com/maps/place/'+detailsdata.address+', {{detailsdata.postal_code}}')" > 
+                    <hr>
+                    <ion-list id="list12">
+                        <ion-item  >Ad ID: {{detailsdata.ad_id}}</ion-item>
+                        <ion-item  >Ad Views: {{detailsdata.views}}</ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>
+

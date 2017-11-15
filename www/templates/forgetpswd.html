@@ -1,0 +1,35 @@
+
+
+<ion-view title="forgot password" id="page7" style="background-color: rgb(255, 230, 220);">
+    <ion-content padding="true" class="has-header" ng-controller="forgetCtrl">
+        <div class="spacer" style="width: 283px; height: 26px;"></div>
+        <div>
+            <img src="img/7JjlcfuTRHyokjDNvcsH_forgot_password_illustration.png" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="spacer" style="width: 283px; height: 34px;"></div>
+        <div>
+            <p>
+            </p>
+            <center style="color:#4D301C;font-style:italic;font-size:29px;">Recover Your</center>
+            <p></p>
+            <p>
+            </p>
+            <center style="color:#4D301C;font-style:italic;font-size:29px;">Password</center>
+            <p></p>
+        </div>
+        <form name="forgotForm" id="forgotPassword-form2" class="list" ng-submit="submitForm()" method="post" novalidate>
+            <label  class="item item-input" id="forgotPassword-input3" ng-class="{ 'has-error' : forgotForm.email.$invalid && !forgotForm.firstName.$pristine }">
+            <input placeholder="Email" type="email" name="email" 
+                ng-model="email" required="">
+            </label>
+        </form>
+        <div class="spacer" style="width: 283px; height: 0px;"></div>
+        <button id="forgotPassword-button4" style="color:#FFFFFF;font-style:italic;font-size:29px;border-radius:100px 100px 100px 100px;background-color: #F68120"" class="button   button-block" ng-disabled="forgotForm.$invalid" ng-click="send()">Recover It!</button>
+        <div class="spacer" style="width: 283px; height: 15px;"></div>
+        <p>
+            <span ui-sref="login" style="color:#4D301C;font-style:italic;font-size:19px;">Log in</span>
+            <span style="float:right;color:#4D301C;font-style:italic;font-size:19px;" ui-sref="signup">Sign Up</span>
+        </p>
+    </ion-content>
+</ion-view>
+

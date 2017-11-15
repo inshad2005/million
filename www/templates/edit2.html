@@ -1,0 +1,98 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page132" title="Edit PostAdd">
+    <ion-content padding="true" class="has-header" ng-controller="editpostAddCtrl2" >
+        <form  name="postaddform" class="list" id="postad-form1" class="list" 
+            method="post" novalidate>
+            <!--  <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Image</font></p>-->
+            <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                    <i class="icon ion-android-camera"></i> Image
+                </ion-item>
+                <ion-list id="talentPool-list12" ng-repeat=" images in imagedata">
+                    <ion-item style="" id="talentPool-list-item24" class="item-thumbnail-left item-icon-right ">
+                        <img src=http://europa.promaticstechnologies.com/million/uploads/{{images.replace('[','').replace('"','').replace('"','').replace(']','')}}> 
+                        <button style="width:auto;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:16px;margin-top: 10px;" class="btn" ng-click="openPopover($event,images)">Change Image</button>
+                        <button style="width:99px;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;float:left;" class="btn" ng-click="imagedelete(images)" >Delete Image</button>
+                        <button style="width:auto;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:16px;margin-top: 10px;" class="btn" ng-click="openPopover($event)">Add Image</button>
+                    </ion-item>
+                </ion-list>
+                <div ng-if="imagedata==[]">
+                    <ion-list>
+                        <ion-item style="" id="talentPool-list-item24" class="item-thumbnail-left item-icon-right ">
+                            <img src="img/no-thumb.jpg"> 
+                        </ion-item>
+                        <button style="width:auto;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:16px;margin-top: 10px;" class="btn" ng-click="openPopover($event)">Add Image</button>
+                    </ion-list>
+                </div>
+            </div>
+            <p ng-show="postaddform.youtubelink.$invalid && !postaddform.youtubelink.$pristine" placeholder="youtubelink"><font color="red">youtubelink Name is required.</font></p>
+            </div>
+            <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                    <i class="icon ion-information"></i>Description
+                </ion-item>
+                <label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.description.$invalid && !postaddform.description.$pristine }">
+                <textarea placeholder="Add description" type="text"class="form-control" name="description" 
+                    ng-model="editdata.description" required></textarea>
+                </label>
+                <p ng-show="postaddform.description.$invalid && !postaddform.description.$pristine" placeholder="description"><font color="red"> description is required.</font></p>
+                <p>10000 characters remaining (12 words minimum).
+                    Enter as much information possible; ads with detailed and longer descriptions get more views and replies!
+                </p>
+            </div>
+            <!-- <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                      <i class="icon ion-link"></i>Website Link</ion-item>
+                      <ion-checkbox ng-model="web">Include a link to your website for $5.</ion-checkbox>
+                
+                      <label id="postadd-input14" class="item item-input"ng-class="{ 'has-error' : postaddform.Link$invalid && !postaddform.Link.$pristine }">
+                      <input placeholder="Link" type="text" class="form-control" name="Link"
+                       ng-model="editdata.web_link" required>
+                  </label>
+                  <p ng-show="postaddform.Link.$invalid && !postaddform.Link.$pristine" placeholder="Link"><font color="red">Website Link is required.</font></p>
+                
+                  </div> -->
+            <!--  <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                      <i class="icon ion-ios-photos"></i>Select an option to promote your ad. </ion-item>
+                      <ion-checkbox ng-model="editdata.urgent">Urgent<p style="text-align:right;">7 days - $8</p></ion-checkbox>
+                
+                
+                
+                
+                      <ion-checkbox  ng-model="editdata.featured" >Featured<select>
+                      <option>7 days - $8</option>
+                               <option>15 days - $15</option>
+                                <option>30 days - $28</option></select></ion-checkbox>
+                
+                      <ion-checkbox ng-model="editdata.spolight">Spotlight<p style="text-align:right;">7 days - $8</p></ion-checkbox>
+                      <ion-checkbox ng-model="all">Select all above<p>Let people know you want to sell, rent or hire quickly.   </p></ion-checkbox></div> -->
+            <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                    <i class="icon ion-ios-contact"></i>your contact details
+                </ion-item>
+                <ion-checkbox ng-model="check4" >
+                    Email
+                    <p ng-show="check4==true" ng-model="editdata.email_id">{{editdata.email_id}}</p>
+                </ion-checkbox>
+                <ion-checkbox ng-model="check5">contact no. </ion-checkbox>
+                <label id="postadd-input14" class="item item-input"ng-class="{ 'has-error' : postaddform.contact$invalid && !postaddform.contact.$pristine }" ng-show="check5==true">
+                <input placeholder="contact no." type="text" class="form-control" name="0"
+                    ng-model="editdata.contact_no" required>
+                </label>      
+                <p ng-show="postaddform.contact.$invalid && !postaddform.contact.$pristine" placeholder="contact"><font color="red">contact no. required.</font></p>
+            </div>
+            <div id="postadd-card22" class="list card">
+                <ion-item style="" id="postadd-list-item9" class="item-icon-left">            
+                    <i class="icon ion-ios-pricetag"></i>Total: $ {{total_edit}}
+                </ion-item>
+            </div>
+            <div id="postadd-card22" class="list card">
+                <p> By clicking 'Post my ad', you agree to Million Opportunitie's terms of use, privacy policy and posting rules.</p>
+            </div>
+            <button style="width:100%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin-top:20px;" class="btn" ng-click="post()" >Post my ad</button>
+        </form>
+    </ion-content>
+</ion-view>
+

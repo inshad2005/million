@@ -1,0 +1,153 @@
+<style type="text/css">
+.date { float:right;
+font-size:12px;
+}
+.reply { float:left;
+font-size:12px;
+margin-left: 10px;
+}
+.left {
+float: left;
+width: auto;
+}
+.comment-heading {
+float: left;
+width: 100%;
+}
+.custom-comments {
+float: left;
+margin-top: 10px;
+padding: 10px;
+width: 100%;
+}
+blockquote{
+background-color: #f7f7f7;
+float: left;
+margin-top: 10px;
+padding: 10px;
+width: 100%;
+}
+.reply-heading {
+float: left;
+width: 100%;
+}
+.custom-reply {
+float: left;
+margin-left: 30px;
+margin-top: 5px;
+padding: 10px;
+width: 88%;
+}
+.custom-reply2 {
+float: left;
+margin-left: 30px;
+margin-top: 5px;
+padding: 10px;
+width: 93%;
+}
+*{
+font-family:"Comic Sans MS";
+}
+blockquote{
+background-color: #f0f0f0;
+border-bottom: 1px solid #cccccc;
+border-top: 1px solid #cccccc;
+float: left;
+margin-bottom: 15px;
+margin-top: 10px;
+padding: 10px;
+width: 100%;
+}
+.icon2{
+font-size: 17px;
+}
+.icon4{ 
+font-size: 17px;
+color:#892886;
+margin-bottom: 0px;
+margin-top: 50px;
+margin-right: 10px;
+margin-left: 20px;
+
+}
+.icon5{ margin-left: 20px;
+font-size: 17px;
+margin-bottom: 0px;
+margin-top: 50px;
+margin-right: 10px;
+}
+.icon6{ 
+margin-left: 10px;
+margin-right: 20px;
+font-size: 17px;
+}
+.icon7{
+float: right;
+font-size: 17px;
+/*margin-left: 150px;
+margin-right: 20px;
+margin-top:30px;*/
+}
+</style>
+<ion-view title="Forum" id="page14" style="">
+<ion-content padding="true" class="has-header" ng-controller="forumCtrl">
+<h3>Discussion {{forum}}
+</h3>
+<ion-item style="" id="forum-list-item18" class="item-icon-right">
+<i  class="icon ion-chatbox" ng-click="forum1(team_id)"></i>Start Discussion Here
+</ion-item>
+<div class="list card" id="page4-card23" ng-repeat="details in detail">
+<div class="item item-avatar">
+<img ng-src="img/jercy.png"> 
+<span class="left">{{details.name}}</span> 
+<span class="date">{{details.created}}</span>
+</div>
+<div class="custom-comments">
+<span class="comment-heading" ng-bind-html="details.description">
+</span>
+<span class="date">
+<i class="icon4 icon ion-thumbsup"
+ng-click="likes(details.id)"ng-show="details.count!=null">{{details.count}}
+</i>
+<i class="icon5 icon ion-thumbsup"
+ng-click="likes(details.id)"ng-show="details.count==null">{{details.count}}
+</i></span>
+<span class="date">
+<i class = "icon2 icon ion-quote" ng-click="addQuote(details.name, details.description)">
+</i>
+</span>
+<span class="date">
+<i class = "icon6 icon ion-reply" ng-click="toggle($index)" ></i></span>
+<div ng-show="myVar[$index]">
+<textarea class="rply" placeholder="reply"  ng-model="replytext[$index]" style="padding:10px;" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="postrply(details.id,replytext[$index])">reply</button>
+</div>
+</div> 
+<div class="custom-reply" ng-repeat="reply in details.replies">
+<div>
+<span class="reply-heading"> {{reply.name}} :  {{reply.description}} 
+<i class = "icon7 icon ion-reply" ng-click="toggle1($index)" ></i>
+</span>
+<div ng-show="myVar1[$index]">
+<textarea class="rply" placeholder="reply"  ng-model="subreplytext[$index]" style="padding:10px;" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="subrely(reply.id,subreplytext[$index])">reply</button>
+</div>
+</div>
+<!--<span class="date"  ><i class = "icon2 icon ion-quote" ng-click="subrply()"></i></span>
+<div ng-show="myVar1[$index]">
+<textarea class="rply" placeholder="subreply"  ng-model="subreplytext[$index]" style="padding:10px;" >
+</textarea>
+<button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="subrely(reply.id,subreplytext[$index])">reply
+</button>
+</div> -->
+<div class="custom-reply2" ng-repeat="subreply in reply.subreplies">
+<span class="reply-heading">{{subreply.name}}  :  {{subreply.description}}
+<i class = "icon7 icon ion-reply" ng-click="toggle2($index)" ></i>
+</span>
+<div ng-show="myVar2[$index]">
+<textarea class="rply" placeholder="reply"  ng-model="subreplytext[$index]" style="padding:10px;" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="subrely2(reply.id,subreplytext[$index])">reply</button>
+</div>
+</div>  
+</div> 
+</div>
+<div class="spacer" style="width: 287px; height: 30px;"></div>
+</ion-content>
+</ion-view>

@@ -1,0 +1,108 @@
+<style type="text/css">
+  .gallery {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+</style>
+
+
+<ion-view style="background-color: rgb(245, 245, 245);" id="page11" title="Details">
+    <ion-content class="has-header" padding="true" ng-controller="detailsCtrl">
+        <head>
+            <style type="text/css">
+   .icon4 {
+   font-size: 30px;
+}
+
+</style>
+        </head>
+        <div> 
+         <div class="list card" id="page3-card22">
+           <div id="page3-null" style="margin-top:0px;color:#000000;">
+                    <h5>{{detailsdata.ad_title}}
+                    </h5>
+                    <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-right:10px;margin-left:4px; margin-bottom:14px;" class="icon ion-android-share-alt" ng-click="shareAnywhere(detailsdata.short_description,detailsdata.ad_title,detailsdata.images)"> Share </button>
+                <span ng-show=" detailsdata.favourite==null && emailcheck!=null">
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" class="icon ion-android-star-outline" ng-click="addfavorite(detailsdata.id)"> Add to favorite </button></span>
+                <span ng-show="detailsdata.favourite!=null&& emailcheck!=null">
+                <button style="width:47%;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;" ng-click="removefavorite(detailsdata.favourite.id)"> <i class='icon ion-android-star-outline' style="color:#F68120" ></i> Add to favorite </button></span>
+                </div>
+
+<div class="card card-list" >
+
+<span ng-repeat="slide in imagedata" >
+    <!--<img src="{{image}}" width="150px">
+     <img src=http://europa.promaticstechnologies.com/million/uploads/{{image.replace('[','').replace('"','').replace('"','').replace(']','')}} width="90px" height="70px" ng-click="zoom(image)"> -->
+
+     <img ng-src=http://europa.promaticstechnologies.com/million/uploads/{{slide.replace('[','').replace('"','').replace('"','').replace(']','')}} width="32%" height="70px" margin="10px" padding="40px"  zoom-src=http://europa.promaticstechnologies.com/million/uploads/{{slide.replace('[','').replace('"','').replace('"','').replace(']','')}} zoom-view />
+  </span></div>
+            <div ng-show="detailsdata.images=='[]'">
+            <div class=" item item-image">  
+           
+                <img src="img/no-thumb.jpg" style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+            </div> </div>         
+            <div class="item item-body" id="page3-list-item-container1">
+                <div id="page3-null" style="margin-top:0px;;">
+                    <h2>About Ad
+                    </h2></hr>
+                  <!--  <table><tr style="width:100%"><td style="width:33%;">Posted</td>  <td style="width:33%">Postal Code </td> <td style="width:33%">Seller Type</td></tr>
+                            <tr style="width:100%"><td style="width:33%;padding-right:10px" >{{timedata}}</td><td style="width:33%">{{detailsdata.postal_code}}</td><td style="width:33%">{{detailsdata.seller_type}}</td></tr></table>-->
+
+
+                                 <ion-list id="list12">
+
+                                <ion-item  >Posted: {{timedata}} </ion-item>
+                                <ion-item  >Postal Code: {{detailsdata.postal_code}}</ion-item>
+                                <ion-item ng-show="detailsdata.v_make!= ''" >Make: {{detailsdata.v_make}} </ion-item>
+                                <ion-item ng-show="detailsdata.model!= ''"  >Model: {{detailsdata.model}}</ion-item>
+                                <ion-item  ng-show="detailsdata.v_purchase_year!= ''" >Year: {{detailsdata.v_purchase_year}} </ion-item>
+                                <ion-item  ng-show="detailsdata.mileage!= ''" >Mileage: {{detailsdata.mileage}}</ion-item>
+                                <ion-item  ng-show="detailsdata.seller_type!= ''" >Seller Type: {{detailsdata.seller_type}}</ion-item>
+                                <ion-item  ng-show="detailsdata.v_body_type!= ''" >Body Type: {{detailsdata.v_body_type}} </ion-item>
+                                <ion-item  ng-show="detailsdata.fuel_type!= ''" >Fuel Type: {{detailsdata.fuel_type}}</ion-item>
+                                <ion-item  ng-show="detailsdata.transmission!= ''" >Transmission: {{detailsdata.transmission}} </ion-item>
+                                <ion-item  ng-show="detailsdata.color!= ''" >Color: {{detailsdata.color}}</ion-item>
+                                <ion-item  ng-show="detailsdata.engine_size!= ''" >Engine Size: {{detailsdata.engine_size}} </ion-item>
+                                <ion-item  ng-show="detailsdata.price!= ''" >Price: {{detailsdata.price}} </ion-item>
+                                <ion-item  ng-show="detailsdata.web_link!= ''" >Website: {{detailsdata.web_link}} </ion-item>
+                                 <ion-item>
+                                    
+                                    <div class="video-container">
+                                        <iframe src="{{detailsdata.video_link |  trustAsResourceUrl}}" frameborder="0" width="100%" height="150"></iframe>
+                                    </div>
+                                   
+                                </ion-item>
+                                 </ion-list>
+                               
+                            
+                            
+            </div></div>
+            <div class="item item-text-wrap item-left">Description : 
+                            {{detailsdata.short_description}}</div>
+             
+                <div id="page3-null" style="margin-top:0px;" class="item item-text-wrap">
+                   <div class="item item-icon-left"><i class="icon ion-man icon4"></i> Ad Posted By : {{detailsdata.user.username}}</div>
+
+                    <a class="item item-icon-left" ng-href="tel:{{detailsdata.contact_no}}"><i class="icon ion-android-call"></i>Call Us:  {{detailsdata.contact_no}}  </a><br>
+
+
+
+
+
+
+                  <a class="item item-icon-left " ng-click="sendMail(detailsdata.email_id)"><i class="icon ion-ios-email"></i>Email:  {{detailsdata.email_id}}</a><br>
+                   
+
+       <a class="item item-icon-left" ng-click="openInExternalBrowser('www.google.com/maps/place/'+detailsdata.address+', {{detailsdata.address}}')"> <i class="icon ion-android-map"></i>Address:  {{detailsdata.address}}</a><br>
+                    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{detailsdata.address}}&zoom=13&scale=false&size=400x200&maptype=roadmap&format=png&visual_refresh=true" width="100%" ng-click="openInExternalBrowser('www.google.com/maps/place/'+detailsdata.address+', {{detailsdata.address}}')" > 
+
+                    <hr>
+                    <ion-list id="list12">
+                    <ion-item  >Ad ID: {{detailsdata.ad_id}}</ion-item>
+                   <ion-item  >Ad Views: {{detailsdata.views}}</ion-item></ion-list>
+   
+            </div></div>
+        </div></div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+ionic plugin add https://github.com/Telerik-Verified-Plugins/Stripe --variable API_KEY=sk_test_TEx2sKT8qzyUIgVi8mbYEOkA
+
+
+sk_test_TEx2sKT8qzyUIgVi8mbYEOkA
+
+
+
+bower install angular-credit-cards
+
+
+
+ionic state save
+
+
+cordova plugin remove name-of-plugin

@@ -1,0 +1,373 @@
+<ion-view style="background-color: rgb(245, 245, 245);" id="page13" title="PostAdd">
+		<ion-content padding="true" class="has-header" ng-controller="postAddCtrl"
+			style="background: url(img/splash.png)no-repeat center;background-size:cover;" >
+			<form  name="postaddform" class="list" id="postad-form1" ng-submit="" class="list" 
+			method="post" novalidate>
+					<div id="postadd-card22" class="list card">
+							<ion-item  id="postadd-list-item9" class="item-icon-left" style="background-color: #F68120">
+									<i class="icon ion-ios-contact"></i>Contact Details
+							</ion-item>
+							<ion-checkbox ng-model="check1">Name: </ion-checkbox>
+
+							<label id="postadd-input14" class="item item-input"ng-class="{ 'has-error' : postaddform.contact$invalid && !postaddform.contact.$pristine }" ng-show="check1==true">
+									<input placeholder="Name." type="text" class="form-control" name="con_name"
+									ng-model="name">
+							</label>
+
+
+							<ion-checkbox ng-model="check2">contact no: </ion-checkbox>
+
+							<label id="postadd-input14" class="item item-input"ng-class="{ 'has-error' : postaddform.contact$invalid && !postaddform.contact.$pristine }" ng-show="check2==true">
+									<input placeholder="Contact No." type="text" class="form-control" name="con_no"
+									ng-model="contactno">
+							</label>
+
+
+							<ion-checkbox ng-model="check3" >Email:</ion-checkbox>
+
+							<label id="postadd-input14" class="item item-input"ng-class="{ 'has-error' : postaddform.contact$invalid && !postaddform.contact.$pristine }" ng-show="check3==true">
+									<input placeholder="Email ID" type="email" class="form-control" name="con_email" ng-model="email" >
+							</label>
+							<p ng-show="postaddform.contact.$invalid && !postaddform.contact.$pristine" placeholder="contact">
+							<font color="red">contact no. required.</font>
+							</p>
+					</div>
+
+
+
+					<div id="postadd-card22" class="list card">
+							<ion-item  id="postadd-list-item9" class="item-icon-left" style="background-color: #F68120">
+							<i class="icon ion-android-arrow-dropdown-circle"></i> Choose Category
+							</ion-item>
+
+							<label id="postadd-select1" class="item item-select"ng-class="{ 'has-error' : postaddform.invite.$invalid && !postaddform.invite.$pristine}">
+									<span  class="input-label">Category</span>
+									<select class="form-control" name="invite" ng-model="category"required >
+											<option value="Events">Events</option>
+											<option value="Jobs">Jobs</option>
+											<option value="Goods & Services">Goods & Services</option>
+											<option value="Properties">Properties</option>
+											<option value="Missing, Lost & Found">Missing, Lost & Found</option>
+											<option value="Motors">Motors</option>
+											<option value="Magazines, chat, blog">Magazines, chat, blog</option>
+											<option value="Others Deals">Others Deals</option>
+									</select>
+							</label>
+
+
+
+							<label id="postadd-select2" class="item item-select"ng-class="{ 'has-error' : postaddform.invites.$invalid && !postaddform.invites.$pristine }">
+							<span  class="input-label">Sub-category</span>
+
+							<select  ng-model="subcategory" name="invites" >
+									<option ng-if="category=='Events'">Music and Entertainment </option>
+									<option ng-if="category=='Events'">Religious </option>
+									<option ng-if="category=='Events'">Sports</option>
+									<option ng-if="category=='Events'">Educational </option>
+									<option ng-if="category=='Events'">Political </option>
+									<option ng-if="category=='Events'">Art and Culuture </option>
+									<option ng-if="category=='Events'">Social </option>
+									<option ng-if="category=='Events'">Others </option>
+									<option ng-if="category=='Jobs'">Accountancy</option>
+									<option ng-if="category=='Jobs'">Administration </option>
+									<option ng-if="category=='Jobs'">Advertising </option>
+									<option ng-if="category=='Jobs'">Aerospace/Aviation </option>
+									<option ng-if="category=='Jobs'">Agriculture </option>
+									<option ng-if="category=='Jobs'">Architecture </option>
+									<option ng-if="category=='Jobs'">Art/Design/Graphics </option>
+									<option ng-if="category=='Jobs'">Automotive </option>
+									<option ng-if="category=='Jobs'">Banking </option>
+									<option ng-if="category=='Jobs'">Biotechnology </option>
+									<option ng-if="category=='Jobs'">Catering & Food services </option>
+									<option ng-if="category=='Jobs'">Charity/Voluntary/Non-profit </option>
+									<option ng-if="category=='Jobs'">Construction </option>
+									<option ng-if="category=='Jobs'">Consultancy </option>
+									<option ng-if="category=='Jobs'">Couselling </option>
+									<option ng-if="category=='Jobs'">Customer service </option>
+									<option ng-if="category=='Jobs'">Dental </option>
+									<option ng-if="category=='Jobs'">Driving </option>
+									<option ng-if="category=='Jobs'">Education </option>
+									<option ng-if="category=='Jobs'">Electrical </option>
+									<option ng-if="category=='Jobs'">Emergency </option>
+									<option ng-if="category=='Jobs'">Engineering </option>
+									<option ng-if="category=='Jobs'">Entertainment </option>
+									<option ng-if="category=='Jobs'">Fashion </option>
+									<option ng-if="category=='Jobs'">Financial </option>
+									<option ng-if="category=='Jobs'">Graduate </option>
+									<option ng-if="category=='Jobs'">Health and safety </option>
+									<option ng-if="category=='Jobs'">Healthcare and medical </option>
+									<option ng-if="category=='Jobs'">Home worker </option>
+									<option ng-if="category=='Jobs'">Childcare </option>
+									<option ng-if="category=='Jobs'">Hotel / hospitality </option>
+									<option ng-if="category=='Jobs'">Human resources and employment</option>
+									<option ng-if="category=='Jobs'">IT/Internet/Technical </option>
+									<option ng-if="category=='Jobs'">Import Export </option>
+									<option ng-if="category=='Jobs'">Industrial </option>
+									<option ng-if="category=='Jobs'">Insuarance </option>
+									<option ng-if="category=='Jobs'">Journalism </option>
+									<option ng-if="category=='Jobs'">Legal </option>
+									<option ng-if="category=='Jobs'">Leisure </option>
+									<option ng-if="category=='Jobs'">Management & Executive </option>
+									<option ng-if="category=='Jobs'">Manufacturing </option>
+									<option ng-if="category=='Jobs'">Marketing & Public relations </option>
+									<option ng-if="category=='Jobs'">Mechanical </option>
+									<option ng-if="category=='Jobs'">Media/Creative/Digital </option>
+									<option ng-if="category=='Jobs'">Nursing </option>
+									<option ng-if="category=='Jobs'">Oil & Gas/Energy </option>
+									<option ng-if="category=='Jobs'">Other </option>
+									<option ng-if="category=='Jobs'">Packaging </option>
+									<option ng-if="category=='Jobs'">Pharmaceutical </option>
+									<option ng-if="category=='Jobs'">Photography </option>
+									<option ng-if="category=='Jobs'">Printing </option>
+									<option ng-if="category=='Jobs'">Property </option>
+									<option ng-if="category=='Jobs'">Public sector </option>
+									<option ng-if="category=='Jobs'">Publishing </option>
+									<option ng-if="category=='Jobs'">Purchasing </option>
+									<option ng-if="category=='Jobs'">Recruitment </option>
+									<option ng-if="category=='Jobs'">Retail </option>
+									<option ng-if="category=='Jobs'">Sales </option>
+									<option ng-if="category=='Jobs'">Sciencetific </option>
+									<option ng-if="category=='Jobs'">Secretarial & PA </option>
+									<option ng-if="category=='Jobs'">Security </option>
+									<option ng-if="category=='Jobs'">Social services </option>
+									<option ng-if="category=='Jobs'">Teaching </option>
+									<option ng-if="category=='Jobs'">Telecomms </option>
+									<option ng-if="category=='Jobs'">Textiles </option>
+									<option ng-if="category=='Jobs'">Trades-Skilled and unskilled </option>
+									<option ng-if="category=='Jobs'">Transports &Logistics </option>
+									<option ng-if="category=='Jobs'">Travel and tourism </option>
+									<option ng-if="category=='Jobs'">Utilities and unstalation </option>
+									<option ng-if="category=='Jobs'">Warehouse</option>
+									<option ng-if="category=='Jobs'">Waste management </option>
+									<option ng-if="category=='Goods & Services'">Fashion </option>
+									<option ng-if="category=='Goods & Services'">Electronics </option>
+									<option ng-if="category=='Goods & Services'">Health & Beauty </option>
+									<option ng-if="category=='Goods & Services'">Food and beverages </option>
+									<option ng-if="category=='Goods & Services'">Education </option>
+									<option ng-if="category=='Goods & Services'">Childcare </option>
+									<option ng-if="category=='Goods & Services'">Wedding </option>
+									<option ng-if="category=='Goods & Services'">Repair </option>
+									<option ng-if="category=='Goods & Services'">Business and management </option>
+									<option ng-if="category=='Goods & Services'">Accounts </option>
+									<option ng-if="category=='Goods & Services'">Legal services </option>
+									<option ng-if="category=='Goods & Services'">Administration </option>
+									<option ng-if="category=='Goods & Services'">Information technology </option>
+									<option ng-if="category=='Goods & Services'">Entertainment</option>
+									<option ng-if="category=='Goods & Services'">Supply of Goods & Services </option>
+									<option ng-if="category=='Goods & Services'">Animals </option>
+									<option ng-if="category=='Goods & Services'">Propery and maintainance </option>
+									<option ng-if="category=='Goods & Services'">Trademen and construction </option>
+									<option ng-if="category=='Goods & Services'">Transport and communication </option>
+									<option ng-if="category=='Goods & Services'">Tourism </option>
+									<option ng-if="category=='Properties'">For sale </option>
+									<option ng-if="category=='Properties'">To Rent </option>
+									<option ng-if="category=='Properties'">To Share </option>
+									<option ng-if="category=='Properties'">To offer </option>
+									<option ng-if="category=='Properties'">Houses /Apartments </option>
+									<option ng-if="category=='Properties'">Homes </option>
+									<option ng-if="category=='Properties'" >Students hostels</option>
+									<option ng-if="category=='Properties'">Students hostels</option>
+									<option ng-if="category=='Properties'">Students hostels</option>
+									<option ng-if="category=='Properties'">Land / Plots </option>
+									<option ng-if="category=='Properties'">Shops </option>
+									<option ng-if="category=='Properties'">Events & Sales </option>
+									<option ng-if="category=='Properties'">Others </option>
+									<option ng-if="category=='Missing, Lost & Found'">Missing </option>
+									<option ng-if="category=='Missing, Lost & Found'">Lost </option>
+									<option ng-if="category=='Missing, Lost & Found'">Found </option>
+									<option ng-if="category=='Missing, Lost & Found'">Others Dealss </option>
+									<option ng-if="category=='Motors'" value="car">Car </option>
+									<option ng-if="category=='Motors'" value="motorcycles">Motocycles </option>
+									<option ng-if="category=='Motors'" value="vehicles">Vehicles </option>
+									<option ng-if="category=='Motors'" value="car accessories and parts">Cars accessories and Parts </option>
+									<option ng-if="category=='Motors'" value="garage">Garage </option>
+									<option ng-if="category=='Motors'"  value="events and sales">Events and sales </option>
+									<option ng-if="category=='Motors'" value="motor deals">Motor deals </option>
+									<option ng-if="category=='Magazines, chat, blog'">Magazines, chat, blog </option>
+									<option ng-if="category=='Others Deals'">Others Deals </option>
+							</select>
+						</label>
+					</div>
+
+
+
+					<!-- <div id="postadd-card23" class="list card">
+
+							<ion-item  id="postadd-list-item9" class="item-icon-left">
+							<i class="icon ion-ios-location"></i>Location
+							</ion-item>
+
+							<label id="postadd-input15" class="item item-input" ng-class="{ 'has-error' : postaddform.address.$invalid && !postaddform.address.$pristine }">
+									<input placeholder="address" type="text" class="form-control" name="address" ng-model="address" required>
+							</label>
+							<p ng-show="postaddform.address.$invalid && !postaddform.address.$pristine" placeholder="address">
+							<font color="red">address is required.</font></p>
+
+
+							<label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.pincode.$invalid && !postaddform.pincode.$pristine }">
+										<input placeholder="pincode" type="text"class="form-control" name="pincode" ng-model="pincode" required>
+							</label>
+							<p ng-show="postaddform.pincode.$invalid && !postaddform.pincode.$pristine" placeholder="pincode">
+							<font color="red">postal code is missing.</font></p>
+					</div> -->
+
+
+
+					<div id="postadd-card23" class="list card">
+							<ion-item  id="postadd-list-item9" class="item-icon-left" style="background-color: #F68120">
+							<i class="icon ion-social-pinterest"></i>Seller Type
+							</ion-item>
+
+							<ion-radio value="trade" ng-model="radio" checked>Trade</ion-radio>
+							<ion-radio value="private" ng-model="radio" >Private</ion-radio>
+
+					</div><!-- 
+
+
+					<div id="postadd-card23" class="list card">
+							<ion-item  id="postadd-list-item9" class="item-icon-left item-icon-right">
+							<i class="icon ion-ios-albums"></i>Add Posting  
+
+							<i class="icon ion-cash"> ${{adprice}}</i>
+							</ion-item>
+					</div> -->
+
+
+					<div id="postadd-card23" class="list card"  ng-show="subcategory=='car'||subcategory=='motorcycles'||subcategory=='vehicles'">
+							<ion-item  id="postadd-list-item9" class="item-icon-left" style="background-color: #F68120">
+							<i class="icon ion-information"></i>Vehicle Specification
+							</ion-item>
+
+							<label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type.$invalid && !postaddform.type.$pristine }">
+							<span class="input-label">Make</span>
+							<select class="form-control" name="type" ng-model="make" >
+									<option>Alpha Romeo</option>
+									<option>Aston Martin</option>
+									<option>Audi</option>
+									<option>Cadillac</option>
+									<option>Chevy</option>
+									<option>Ferrari</option>
+									<option>Ford</option>
+									<option>Range Rover</option>
+							</select>
+							</label>
+							<p ng-show="postaddform.type.$invalid && !postaddform.type.$pristine">
+							<font color="red">Select atleast one option.</font>
+							</p>
+
+
+
+
+							<label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type2.$invalid && !postaddform.type2.$pristine }">
+							<span class="input-label">year</span>
+							<select class="form-control" name="type2" ng-model="year" >
+									<option>2016</option>
+									<option>2015</option>
+									<option>2014</option>
+									<option>2013</option>
+									<option>2012</option>
+									<option>2011</option>
+							</select>
+							</label>
+							<p ng-show="postaddform.type2.$invalid && !postaddform.type2.$pristine">
+							<font color="red">Select atleast one option.</font>
+							</p>
+
+
+							<label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type3.$invalid && !postaddform.type3.$pristine }">
+							<span class="input-label">Fuel Type</span>
+							<select class="form-control" name="type3" ng-model="fuel" >
+									<option>Diesel</option>
+									<option>Electric</option>
+									<option>Gas</option>
+									<option>Hybrid Electric</option>
+									<option>Petrol</option>
+									<option>Other</option>
+							</select>
+							</label>
+							<p ng-show="postaddform.type3.$invalid && !postaddform.type3.$pristine">
+							<font color="red">Select atleast one option.</font>
+							</p>
+
+
+							<label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type4.$invalid && !postaddform.type4.$pristine }">
+							<span class="input-label">Body Type</span>
+							<select class="form-control" name="type4" ng-model="adbody" >
+									<option>Mini Bus</option>
+									<option>Pick Up</option>
+									<option>Panel Van</option>
+									<option>Sports</option>
+									<option>Saloon</option>
+									<option>Others</option>
+							</select>
+							</label>
+							<p ng-show="postaddform.type4.$invalid && !postaddform.type4.$pristine">
+							<font color="red">Select atleast one option.</font>
+							</p>
+
+
+							<label id="postadd-select4" class="item item-select" ng-class="{ 'has-error' : postaddform.type5.$invalid && !postaddform.type5.$pristine }">
+							<span class="input-label">Transmission</span>
+							<select class="form-control" name="type5" ng-model="transmission" >
+									<option>Automatic</option>
+									<option>Manual</option>
+									<option>Semi-Auto</option>
+									<option>Hybrid Electric</option>
+									<option>Others</option>
+							</select>
+							</label>
+							<p ng-show="postaddform.type4.$invalid && !postaddform.type4.$pristine">
+							<font color="red">Select atleast one option.</font>
+							</p>
+
+
+							<label id="postadd-input15" class="item item-input" ng-class="{ 'has-error' : postaddform.model.$invalid && !postaddform.model.$pristine }">
+									<input placeholder="model" type="text" class="form-control" name="model" ng-model="admodel">
+							</label>
+							<p ng-show="postaddform.model.$invalid && !postaddform.model.$pristine" placeholder="model">
+							<font color="red">Model is required.</font>
+							</p>
+
+
+							<label id="postadd-input15" class="item item-input" ng-class="{ 'has-error' : postaddform.color.$invalid && !postaddform.color.$pristine }">
+									<input placeholder="Color" type="text" class="form-control" name="color" ng-model="color" >
+							</label>
+							<p ng-show="postaddform.color.$invalid && !postaddform.color.$pristine" placeholder="color">
+							<font color="red"> color is required.</font>
+							</p>
+
+
+							<label id="postadd-input15" class="item item-input" ng-class="{ 'has-error' : postaddform.Engine_Size.$invalid && !postaddform.Engine_Size.$pristine }">
+									<input placeholder="Engine Size(cc)" type="text" class="form-control" name="Engine_Size" ng-model="engine" >
+							</label>
+							<p ng-show="postaddform.Engine_Size.$invalid && !postaddform.Engine_Size.$pristine" placeholder="Engine_Size">
+							<font color="red">Engine Size is required.</font>
+							</p>
+
+
+							<label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.Mileage.$invalid && !postaddform.Mileage.$pristine }">
+								<input placeholder="Mileage" type="text"class="form-control" name="Mileage"  ng-model="admileage" >
+							</label>
+							<p ng-show="postaddform.Mileage.$invalid && !postaddform.Mileage.$pristine" placeholder="Mileage">
+							<font color="red">Mileage Name is required.</font>
+							</p>
+					</div>
+
+
+					<div id="postadd-card24" class="list card">
+							<ion-item  id="postadd-list-item9" class="item-icon-left" style="background-color: #F68120">
+							<i class="icon ion-chevron-down"></i>Add Title
+							</ion-item>
+							<label id="postadd-input15" class="item item-input"ng-class="{ 'has-error' : postaddform.title.$invalid && !postaddform.title.$pristine }">
+									<input placeholder="title" type="text"class="form-control" name="title" ng-model="adtitle" required>
+							</label>
+							<p ng-show="postaddform.title.$invalid && !postaddform.title.$pristine" placeholder="title">
+							<font color="red">Please Enter Title.</font>
+							</p>
+			
+					</div>
+					<!--  <button style="width:70%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin-top:20px;" class="btn" ng-click="next(category)">Next</button>-->
+					<button class="button button-balanced button-small button-block" id="postadd-button9"  ng-click="next(category)"  style="width:100%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin-top:20px;" ng-disabled="postaddform.$invalid" >Next</button>
+			</form>
+		</ion-content>
+</ion-view>

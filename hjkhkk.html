@@ -1,0 +1,7 @@
+keytool -export -alias Million -keystore ~/.android\myKeyStore | C:\Program Files\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | C:\Program Files\openssl-0.9.8k_WIN32\bin\openssl enc -a -xtIm30l*********=
+
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | "C:\Program Files\openssl-0.9.8k_WIN32\bin\openssl.exe" sha1 -binary | "C:\Program Files\openssl-0.9.8k_WIN32\bin\openssl.exe" base32

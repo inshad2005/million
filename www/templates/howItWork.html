@@ -1,0 +1,15 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page18" title="How It Work">
+    <ion-content class="has-header" padding="true" ng-controller="howCtrl" >
+        <div>
+            <p>Title: </p>
+            <div ng-bind-html="details.title"></div>
+            <img ng-src="http://europa.promaticstechnologies.com/million/public/img/{{details.image}}" height="auto" width="100%">
+            <p>Description : 
+            <div  ng-bind-html="details.description"></div>
+            </p>
+        </div>
+    </ion-content>
+</ion-view>
+

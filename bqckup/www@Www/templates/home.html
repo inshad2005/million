@@ -1,0 +1,70 @@
+
+<style>
+h1 { color: #ffffff; font-family: 'Lato', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px; }
+
+p { color: #adb7bd;text-align: justify; font-family: 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
+
+a { color: #fe921f; text-decoration: underline; }
+
+a:hover { color: #892886 }
+
+.section{
+ border-bottom: 1px solid #892886;
+ margin-bottom: 10px;
+}
+
+.date { float:right
+}
+
+</style>
+<ion-view view-title="Zportix">
+  <ion-content padding="true" class="has-header" ng-controller="HomeCtrl">
+
+    
+  <div class="list card" ng-repeat="article in articles">
+
+    <div class="item item-avatar">
+    <img src="http://europa.promaticstechnologies.com/zportix/img/ArticleImages/{{article.image[0].image}}">
+    <h2>{{article.title}}</h2>
+     
+    </div>
+    <div class="item item-body"> 
+  
+    <img class="full-image" src="http://europa.promaticstechnologies.com/zportix/img/ArticleImages/{{article.image[0].image}}">
+    <p>{{article.short_description}}....</p>
+ <p>
+      <a href="#" class="subdued">{{article.view}}Views</a>
+      <a href="#" class="subdued" ui-sref="app.seeComment({id:article.id})">{{article.count}} Comments</a>
+      
+    </p>
+ 
+</div>
+<div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" ui-sref="app.detail({id: article.id})">
+      <i class="icon ion-eye"></i>
+      View
+    </a>
+    <a class="tab-item" href="#" ui-sref="app.seeComment({id:article.id})">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" ng-click="share(article.title,article.short_description)">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+  </div>
+</div>
+
+ <!--<form id="comment-form2" class="list" >
+     
+      <textarea placeholder="...add comment here..." ng-model="text"></textarea>
+   
+      <button id="comment-button4" style="font-size:15px;border-radius:49px 49px 49px 49px; background-color:#892886" class="button button-positive button button-small" ng-click="homecomment1(artical_k_liye.id)" style="">Add Comment</button> </form>-->
+
+  
+  
+
+
+
+  </ion-content>
+</ion-view>

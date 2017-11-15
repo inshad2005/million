@@ -1,0 +1,61 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page132" title="Edit PostAdd">
+    <ion-content padding="true" class="has-header" ng-controller="editpostAddCtrl2">
+        <form class="list" id="postAdd-form1">
+            <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Image</font></p>
+            <ion-list id="talentPool-list12" ng-repeat=" images in imagedata">
+            <ion-item style="" id="talentPool-list-item24" class="item-thumbnail-left item-icon-right ">
+                <img src=http://europa.promaticstechnologies.com/million/uploads/{{images.replace('[','').replace('"','').replace('"','').replace(']','')}}> 
+                <button style="width:auto;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:16px;margin-top: 10px;" class="btn" ng-click="openPopover($event,images)">Change Image</button>
+                <button style="width:99px;font-size:12px; background-color:#fff; box-shadow:0px 0px 1px rgba(0,0,0,.5); border:none;color:#555;padding:5px; margin-bottom:14px;float:left;" class="btn" >Delete Image</button>
+            </ion-item>
+            </ion-list> 
+            <p>Add a Youtube video Link.</p>
+            <div class="item item-input-inset">
+                <label class="item item-input-wrapper">       
+                <input type="text" placeholder="https://www.youtube.com/5a1f51c2asc646" ng-model="editdata.video_link">
+                </label>
+            </div>
+            <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Description</font></p>
+            <textarea placeholder="Add description here" style="border:1px solid #ddd; width:100%" ng-model="editdata.description"></textarea>
+            <p>10000 characters remaining (12 words minimum).
+                Enter as much information possible; ads with detailed and longer descriptions get more views and replies!
+            </p>
+        </form>
+        <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Website Link</font></p>
+        <input type="checkbox">Include a link to your website for $5. 
+        <div>
+            <input type="text" style="border:1px solid #ddd; width:100%" ng-model="editdata.web_link" >
+        </div>
+        <div ng-model="promotead">
+            <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Select an option to promote your ad. </font></p>
+            <input type="checkbox" ng-model="editdata.urgent" >Urgent 
+            <p style="text-align:right;">7 days - $8</p>
+            <br>
+            <input type="checkbox" ng-model="editdata.featured">Featured 
+            <select>
+                <option value='8'>7 days - $8</option>
+                <option value='15'>15 days - $15</option>
+                <option value='28'>30 days - $28</option>
+            </select>
+            <br>
+            <input type="checkbox" value="8" ng-model="editdata.spolight">Spotlight
+            <p style="text-align:right;">7 days - $8</p>
+            <br>
+            <input type="checkbox" ng-model="all">Select all above 
+            <p>Let people know you want to sell, rent or hire quickly.   </p>
+        </div>
+        <button style="width:100%;font-size:15px;text-align:left; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;" class="button button-small button-full">Your contact details </button>
+        <p> Please select at least one option to be contacted by: </p>
+        <input type="checkbox" > Email :{{email}}
+        <br>
+        <input type="checkbox" align="left">Contact No.<input type="text" style="border:1px solid #ddd; width:100%" placeholder="Contact No" align="right" ng-model="editdata.contact_no"> 
+        <p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#808080;"><font color="white">Total</font></p>
+        </form>
+        <p style="background-color:	#808080;">By clicking 'Post my ad', you agree to Million Opportunitie's terms of use, privacy policy and posting rules. </p>
+        <button style="width:30%;font-size:15px;text-align:left; background-color:#F68120;" class="button button-small" ng-click="post()">Post my ad</button>
+        </form>
+    </ion-content>
+</ion-view>
+

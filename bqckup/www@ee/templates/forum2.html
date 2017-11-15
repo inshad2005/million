@@ -1,0 +1,19 @@
+<ion-view title="forum" id="page15" style="">
+<ion-content padding="true" class="has-header" ng-controller="forum2Ctrl">
+<div class="spacer" style="width: 287px; height: 40px;"></div>
+<ion-list id="forum2-list15">
+<ion-item style="" id="forum-list-item17" class="item-avatar">
+<img src="img/ben.png"/>
+<h2>{{name}}</h2>
+</ion-item>
+</ion-list>
+<form id="login-form3" class="list" name="loginForm" method="post" novalidate>
+<label class="item item-input item-stacked-label" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
+<span class="input-label">Description</span>
+<textarea placeholder="text" style="padding:10px" ng-model="descr" height="30%" name="username" ng-minlength="15" required></textarea></label>
+
+<p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" ><font color="red">Atleast 15 Characters Rquired.</font></p>
+
+<a class="button button-full " style="background-color:#892886" ng-click="forumadd()" ng-disabled="loginForm.$invalid" ><font color="white">Post</font></a></form>
+</ion-content>
+</ion-view>

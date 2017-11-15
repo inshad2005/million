@@ -1,0 +1,30 @@
+<ion-view view-title="Other">
+  <ion-content class="padding">
+    <h4>Custom URL</h4>
+    <p>Add <b>url</b> property to the category data to set the custom URL. This could be useful to use this plugin as a collapsible page menu</p>
+
+    <pre>
+    	{
+        name: "Electronics",
+        id: 4,
+        items: [// Required: array, even empty
+          {
+            name: "TV",
+            id: 40,
+            items: [
+              ................
+              {
+                name: "Sony",
+                id: 402
+              },
+              {
+                name: "Other - custom URL",
+                url: '/app/other'
+              }
+            ]
+          },
+        ]
+      },
+    </pre>
+  </ion-content>
+</ion-view>

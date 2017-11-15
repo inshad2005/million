@@ -1,0 +1,79 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page20" title="Profile">
+    <ion-content class="has-header" padding="true" ng-controller="profileCtrl">
+        <ion-list id="profileDetails-list15" class=" ">
+            <ion-item id="profileDetails-list-item28" class=" item-icon-right ">Update Contact Details : <i class="icon ion-plus-circled " style="color:#F68120" ng-click="toggle()"></i></ion-item>
+            <div ng-show="myVar" style="width:99%" >
+                <form name="userForm1" ng-submit="submitForm1()" class="list" method="post" novalidate>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.firstname.$invalid && !userForm1.firstname.$pristine }">
+                    <input type="text" name="firstname" placeholder="First Name" ng-model="FirstName"  style="width:99%" required/>
+                    </label>
+                    <p ng-show="userForm1.firstname.$invalid && !userForm1.firstname.$pristine" class="help-block"><font color="red">Enter your First Name</font></p>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.lastname.$invalid && !userForm1.lastname.$pristine }">
+                    <input type="text" name="lastname" placeholder="Last Name" ng-model="LastName" style="width:99%" required/>
+                    </label>
+                    <p ng-show="userForm1.lastname.$invalid && !userForm1.lastname.$pristine" class="help-block"><font color="red">Enter your Last Name</font></p>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.contact.$invalid && !userForm1.contact.$pristine }">
+                    <input type="number" name="contact" placeholder="Contact No" ng-model="phone" style="width:99%"  ng-maxlength="10" required/>
+                    </label>
+                    <p ng-show="userForm1.contact.$invalid && !userForm1.contact.$pristine" class="help-block"><font color="red">Enter your Contact Number</font></p>
+                    <button  class="button button-small button-block" style="color:#FFFFFF;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;" ng-click="contact(FirstName,LastName,phone)" ng-disabled="userForm1.$invalid">Save Change</button>
+                </form>
+            </div>
+            <ion-item id="profileDetails-list-item29" class=" item-icon-right ">Change Password : <i class="icon ion-plus-circled " style="color:#F68120" ng-click="pass()"></i></ion-item>
+            <div ng-show="myVar1">
+                <form name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm.oldpass.$invalid && !userForm.oldpass.$pristine }">
+                    <input type="password" name="oldpass" ng-model="old_pass" placeholder="Old Password" style="width:99%" required/>
+                    </label>
+                    <p ng-show="userForm.oldpass.$invalid && !userForm.oldpass.$pristine" class="help-block"><font color="red">Enter your old Password</font></p>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm.newpass.$invalid && !userForm.newpass.$pristine }">
+                    <input type="password" name="newpass" ng-model="new_pass" placeholder="Password" style="width:99%" ng-minlength="6" ng-maxlength="25" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required/>
+                    </label>
+                    <p ng-show="userForm.newpass.$invalid && !userForm.newpass.$pristine" class="help-block"><font color="red">Must contain 1 upper case & 1 special character.</font></p>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm.confirm.$invalid && !userForm.confirm.$pristine }">
+                    <input type="password" name="confirm" ng-model="con_pass" placeholder="Coinfirm Password" style="width:99%" valid-password-c="new_pass" required/>
+                    </label>
+                    <p ng-show="userForm.confirm.$error.noMatch" class="help-block"><font color="red">Password must be same</font></p>
+                    <button  class="button button-small button-block" style="color:#FFFFFF;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;" ng-click="Passwordchanged(old_pass,new_pass)" ng-disabled="userForm.$invalid" >Change Password</button>
+                </form>
+            </div>
+            <ion-item id="profileDetails-list-item30" class=" item-icon-right ">Manage Email : <i class="icon ion-plus-circled " style="color:#F68120" ng-click="email()"></i></ion-item>
+            <div ng-show="myVar2">
+                <form name="userForm2" ng-submit="submitForm2()" class="list" method="post" novalidate>
+                    <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm2.emailid.$invalid && !userForm2.emailid.$pristine }">
+                    <input type="email" name="emailid" ng-model="Email" placeholder="Email" style="width:99%" required/>
+                    </label>
+                    <p ng-show="userForm2.emailid.$invalid && !userForm2.emailid.$pristine" class="help-block"><font color="red">Enter your valid email id</font></p>
+                    <button  class="button button-small button-block" style="color:#FFFFFF;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;" ng-click="changeemail(Email)" ng-disabled="userForm2.$invalid">Change Email</button>
+                </form>
+            </div>
+            <!-- <ion-item id="profileDetails-list-item291" class=" item-icon-right "><input type="text" ng-model="First_Name" placeholder="Last Name"></ion-item>
+                <ion-item id="profileDetails-list-item292" class=" item-icon-right "><input type="text" ng-model="contact_no" placeholder="Contact No"></ion-item> -->
+            <ion-item id="profileDetails-list-item29" class=" item-icon-right ">Manage your CV : <i class="icon ion-plus-circled " style="color:#F68120" ng-click="cv()"></i></ion-item>
+            <div ng-show="myVar3">
+                <a id="resume-button23" style="color:#160B03;background-color:#F68120" class=" button   button-block" ng-click="showValue()"><i class="icon ion-android-folder-open"></i> Choose Document</a>
+            </div>
+            <ion-item id="profileDetails-list-item30" class=" item-icon-right ">Deactivate Account : <i class="icon ion-plus-circled " style="color:#F68120" ng-click="account()"></i></ion-item>
+            <div ng-show="myVar4">
+                <b>Please Don't Leave Us!</b>
+                <p>Every time an account is deactivated, one of the team cries and it takes hours to get them talking again :( If you 're really sure...Please help us improve MillionOpportunities by letting us know why you're leaving:</p>
+                <form name="userForm3" ng-submit="submitForm2()" class="list" method="post" novalidate>
+                    <ion-radio  ng-model="radio" value="I don't have any more stuff to put on" checked class="item-text-wrap"required/>
+                    I don't have any more stuff to put on MillionOpportunities</ion-radio>
+                    <ion-radio  ng-model="radio" value="I didn't get enough response to my ads on MillionOpportunities" class="item-text-wrap" required/>
+                    I didn't get enough response to my ads on MillionOpportunities</ion-radio>
+                    <ion-radio  ng-model="radio" value="I got too many spam emails from my ads" class="item-text-wrap" required/>
+                    I got too many spam emails from my ads </ion-radio>
+                    <ion-radio  ng-model="radio" value="I'd rather not say" class="item-text-wrap" required/>
+                    I'd rather not say </ion-radio>
+                    <ion-radio  ng-model="radio" value="Other" required/>
+                    Other</ion-radio>
+                    <button  class="button button-small button-block" style="color:#FFFFFF;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;" ng-click="deactivate(radio)" ng-disabled="userForm3.$invalid">Deactivate</button>
+                </form>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
+

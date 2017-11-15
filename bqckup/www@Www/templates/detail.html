@@ -1,0 +1,39 @@
+<style>
+img{
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+    position: relative;
+    outline:1px dotted red;
+}
+
+iframe{
+ width: 100%;
+    height: 100%;
+}
+
+h1 { color: #892886; font-family: 'Lato', sans-serif; font-size: 20px; font-weight: 300;  }
+
+p { color: black; text-align: justify; font-family: 'Lucida Sans', Arial, sans-serif; }
+div{text-align: justify}
+a { color: #fe921f; text-decoration: underline; }
+
+a:hover { color: #892886 }
+
+.section{
+ border-bottom: 1px solid #892886;
+ margin-bottom: 10px;
+}
+
+</style>
+<ion-view title="Article Detail" id="page1" style="">
+  <ion-content padding="true" class="has-header" ng-controller="DetailCtrl">
+   <div ng-repeat="details in detail" ng-bind-html="details.description"> 
+   
+	</div>
+
+<button  ng-repeat="details1 in detail" class="button button-full button-outline"  ui-sref="app.seeComment({id:details1.id})"  style="color:#892886">{{details1.count}} comment</button>  
+<button  ng-repeat="details1 in detail" class="button button-full button-outline"  style="color:#892886">{{details1.view}} views</button>  
+
+  </ion-content>
+</ion-view>

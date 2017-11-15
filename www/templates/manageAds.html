@@ -1,0 +1,45 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page9" title="Manage Ads">
+    <ion-content class="has-header" padding="true">
+        <head>
+            <style type="text/css">
+                .custom-icon2 {
+                color : white    ;
+                font-size: 12px;
+                }
+            </style>
+        </head>
+        <div class="list card" id="page4-card23"  ng-repeat=" x in details">
+        <div id="page4-null" style="margin:10px,10px,10px,10px;color:#000000;padding: 10px">
+            <h4>{{x.ad_title}}
+            </h4>
+            <div class=" item item-image" ng-show="x.images!='[]'">
+                <img src=http://europa.promaticstechnologies.com/million/uploads/{{x.images.replace('[','').replace('"','').replace('"','').replace(']','')}}  style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+            </div>
+            <div class=" item item-image" ng-show="x.images=='[]'">
+                <img src="img/no-thumb.jpg" style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+            </div>
+            <h5>{{x.short_description}}
+            </h5>
+        </div>
+        <table>
+            <tr style="padding: 10px">
+                <td align="left" width="52% ;" style="padding: 10px">Last posted:{{x.time}}</td>
+                <td align="right" width="48%" > Ad ID: {{x.ad_id}}</td>
+            </tr>
+            <tr style="padding: 10px">
+                <td align="left"  width="52%" style="padding: 10px">Replies: 136545</td>
+                <td  align="right" width="48%" >Ad Views: {{x.views}}</td>
+            </tr>
+            </tr>
+        </table>
+        <!--  <a class="button button-small button-icon-left" ng-href="#/page1/page52/{{x.id}}" style="width:70%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;"><i class="icon ion-edit custom-icon2 "> </i>  Edit</a></td>
+            <td align="right"><a class="button button-small  button-icon-left" ng-click="delete(x.id)" style="width:70%; font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;"><i class="icon ion-trash-a custom-icon2" ></i> Delete</a></td>-->
+        <div style="width: 287px; height: 24px;" class="spacer"></div>
+        <a class="button button-icon-left button-small" ng-href="#/page1/page52/{{x.id}}" style="width:40%; color:#FFFFFF;float:right;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;padding:0px; margin-left:10px;margin-right:10px; margin-bottom:14px;" ><i class="icon ion-edit custom-icon2 "> </i><span style="font-color:white; font-size:12px;padding:2px;
+            " ><font color="white" size="3"> Edit </font></span></a>
+        <button style="width:40%;color:#FFFFFF;float:right;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;;padding:0px;  margin-right:24px; margin-left:14px;margin-bottom:14;" class="button button-small button-icon-left" ng-click="delete(x.id)"><i class="icon ion-trash-a custom-icon2" ></i><font color="white" size="3" > Delete</font></button>
+    </ion-content>
+</ion-view>
+

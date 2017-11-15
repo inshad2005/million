@@ -1,0 +1,40 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page19" title="Contact Us">
+    <ion-content class="has-header" padding="true" ng-controller="contactUsCtrl" style="background: url(img/splash.png)no-repeat center;background-size:cover;" >
+        <!--<div class="list">
+            <label class="item item-input">
+            <input type="text" placeholder="Enter Your Name " ng-model="name" >
+            </label></div>
+             <div class="list">
+            <label class="item item-input">
+            <input type="text" placeholder="Enter Your Valid Email id " ng-model="email">
+            </label>
+            </div>
+             <div class="list">
+              <label class="item item-input " >
+              <textarea placeholder="Enter your query" ng-model="message"></textarea></label>
+              </div>
+              <div style="width:100%;text-align:center;">
+                         <button style="width:70%;font-size:15px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin-top:20px;" class="btn" ng-click="submit()">Submit </button>
+                     </div>
+                    -->
+        <div id="postadd-card22" class="list card">
+            <ion-item style="" id="postadd-list-item9" class="item-icon">            
+                <a class="item item-icon-left" ng-href="tel:  +254,000,0000 " >  <i class="icon ion-android-call"></i> Call us now :  +254,000,0000</a>
+                <a class="item item-icon-left  item-text-wrap" ng-click="sendMail(email)"><i class="icon ion-ios-email"></i>   Email:  admin@millionsopportunities.international</a>
+            </ion-item>
+        </div>
+        <label id="postadd-input15" class="item item-input">
+        <input type="text" placeholder="Enter Your Name " ng-model="name">
+        </label>
+        <label id="postadd-input15" class="item item-input">
+        <input type="text" placeholder="Enter Your Valid Email id " ng-model="email">
+        </label>
+        <label id="postadd-input15" class="item item-input">
+        <textarea placeholder="Enter your query" ng-model="message"></textarea>
+        </label>
+        <button style="width:100%;color:#FFFFFF;float:right;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;padding:5px; margin-top:20px;" class="btn" ng-click="submit()">Submit </button>
+    </ion-content>
+</ion-view>
+

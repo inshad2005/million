@@ -1,0 +1,43 @@
+<ion-view   style="" id="page8" title="LogIn"    >
+    <ion-content class="has-header" padding="true" style="background: url(img/bg-MO1.png) no-repeat center;background-size:cover;" ng-controller="loginCtrl">
+    
+            <div>
+        
+        <form name="loginForm" class="list" id="login-form21"  ng-submit="submitForm()" method="post" novalidate>
+            <div style="width: 287px; height: 131px;" class="spacer"></div>
+            <img style="display: block; margin:0px auto;" src="img/Login-1.png" width="40%" >
+            <div style="width: 287px; height: 10px;" class="spacer"></div>
+           
+            <ion-list id="login-list4">
+                <label id="login-input6" class="item item-input" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.firstName.$pristine }">
+
+                   
+                    <input placeholder="Email address" type="email" ng-model="user.email" name="email" required/>
+                </label>
+                 <!--   <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block"><font color="red">Enter a valid email.</font></p>-->
+
+            </ion-list>
+            <label id="login-input7" class="item item-input" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+                
+                <input placeholder="password" type="password" ng-model="user.password" name="password"  required />
+            </label>
+            <!--<p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block"><font color="red">Enter your password.</font></p>-->
+        
+            <button class="button button-stable  button-block" style="width:100%;font-size:12px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px;" id="login-button3"  ng-click="login()" ng-disabled="loginForm.$invalid">Log in</button>
+            <div>
+                <p>
+                    <ng-href="passweord"><a ui-sref="forget">Forget Password</a>
+                    </ng-href="passweord">
+                </p>
+            </div>
+            <a class="button button-positive  button-block button-clear" id="login-button4" ui-sref="signup">Or create an account</a>
+            <label class="item">
+    <button class="button button-block button-positive" ng-click="LoginwithFacebook()">
+    Login with Facebook
+    </button>
+</label>
+        </form>
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="img/Signup-sin.png" height="40%" width="40%">
+        </div>
+    </ion-content>
+</ion-view>

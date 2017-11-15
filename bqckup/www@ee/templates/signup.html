@@ -1,0 +1,61 @@
+<ion-view title="Signup" id="page10" style="">
+  <ion-content padding="true" class="has-header" ng-controller="signupCtrl">
+    <div class="spacer" style="width: 287px; height: 30px;"></div>
+   
+    <form id="signup-form4" class="list" name="signupForm" method="post" novalidate>
+      <ion-list id="signup-list11">
+        <label class="item item-input" id="signup-input3" name="firstname" ng-class="{ 'has-error' : signupForm.firstName.$invalid && !signupForm.firstName.$pristine }">
+          <span class="input-label">firstname</span>
+          <input placeholder="firstname" type="text" ng-model="firstname" name="firstName" required>
+        </label>
+         <p ng-show="signupForm.firstName.$invalid && !signupForm.firstName.$pristine" placeholder="First Name"><font color="red">This Field is Required.</font></p>
+
+        <label class="item item-input" id="signup-input4" name="lastname" ng-class="{ 'has-error' : signupForm.lastName.$invalid && !signupForm.lastName.$pristine }">
+          <span class="input-label">Last Name</span>
+          <input placeholder="lastname" type="text" ng-model="lastname" name="lastName"
+required>
+        </label>
+         <p ng-show="signupForm.lastName.$invalid && !signupForm.lastName.$pristine" placeholder="Last Name"><font color="red">This Field is Required.</font>
+         </p>
+
+        <label class="item item-input" id="signup-input5" name="nickname" ng-class="{ 'has-error' : signupForm.nickname.$invalid && !signupForm.nickname.$pristine }">
+          <span class="input-label">Nick Name</span>
+          <input placeholder="nickname" type="text" ng-model="nickname" name="nickname"
+required>
+        </label>
+        <p ng-show="signupForm.nickname.$invalid && !signupForm.nickname.$pristine" placeholder="Last Name"><font color="red">This Field is Required.</font>
+         </p>
+
+        <label class="item item-input" id="signup-input6" name="email" ng-class="{ 'has-error' : signupForm.email.$invalid && !signupForm.email.$pristine }">
+          <span class="input-label">Email</span>
+          <input placeholder="email" type="email" ng-model="email" name="email"
+required>
+        </label>
+        <p ng-show="signupForm.email.$invalid && !signupForm.email.$pristine"><font color="red">This Field is Required.</font>
+         </p>
+
+        <label class="item item-input" id="signup-input7" name="password" ng-class="{ 'has-error' : signupForm.password.$invalid && !signupForm.password.$pristine }">
+          <span class="input-label">Password</span>
+          <input placeholder="password" type="password" ng-model="password" name="password"
+required>
+        </label>
+        <p ng-show="signupForm.password.$invalid && !signupForm.password.$pristine"><font color="red">This Field is Required.</font>
+         </p>
+
+        <label class="item item-input" id="signup-input8" name="phone">
+          <span class="input-label">Phone No.</span>
+          <input placeholder="phone_no." type="tel" ng-model="phone">
+        </label>
+        <label class="item item-input" id="signup-input9" name="city">
+          <span class="input-label">City</span>
+          <input placeholder="city" type="text" ng-model="city">
+        </label>
+        <label class="item item-input" id="signup-input11" name="dob">
+          <span class="input-label">D.O.B</span>
+          <input placeholder="D.O.B" type="date" ng-mdoel="dob">
+        </label>
+      </ion-list>
+    </form>
+    <button id="signup-button8" class="button button-positive  button-block" style="background-color:#892886" ng-click="signup()" ng-disabled="signupForm.$invalid" >Registration</button>
+  </ion-content>
+</ion-view>

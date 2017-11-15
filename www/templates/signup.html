@@ -1,0 +1,42 @@
+
+
+<ion-view title="Sign Up" id="page8" style="background-color: rgb(255, 230, 220);">
+    <ion-content padding="true" class="has-header" ng-controller="signupCtrl">
+        <div class="spacer" style="width: 283px; height: 17px;"></div>
+        <form id="signUp-form3" class="list" name="signupForm" method="post" novalidate>
+            <label class="item item-input" id="signUp-input4" ng-class="{ 'has-error' : signupForm.firstName.$invalid && !signupForm.firstName.$pristine }">
+            <input placeholder="First Name" type="text" name="firstName" class="item item-input" ng-model="firstName" required>
+            </label>
+            <p ng-show="signupForm.firstName.$invalid && !signupForm.firstName.$pristine" placeholder="First Name"><font color="#4D301C">This Field is Required.</font></p>
+            <div class="spacer" style="width: 283px; height: 9px;"></div>
+            <label class="item item-input" id="signUp-input6" ng-class="{ 'has-error' : signupForm.lastName.$invalid && !signupForm.lastName.$pristine }">
+            <input placeholder="Last Name" type="text" name="lastName" ng-model="lastName" required>
+            </label>
+            <p ng-show="signupForm.lastName.$invalid && !signupForm.lastName.$pristine" placeholder="Last Name"><font color="#4D301C">This Field is Required.</font></p>
+            <div class="spacer" style="width: 283px; height: 9px;"></div>
+            <label class="item item-input" id="signUp-input7" ng-class="{ 'has-error' : signupForm.userName.$invalid && !signupForm.userName.$pristine }">
+            <input placeholder="User Name" type="text"  name="userName"  ng-model="userName" required>
+            </label>{{userName}}
+            <p ng-show="signupForm.userName.$invalid && !signupForm.userName.$pristine" placeholder="Last Name"><font color="#4D301C">This Field is Required.</font></p>
+            <div class="spacer" style="width: 283px; height: 9px;"></div>
+            <label class="item item-input" id="signUp-input8" name="email" ng-class="{ 'has-error' : signupForm.email.$invalid && !signupForm.email.$pristine }">
+            <input placeholder="Email" type="email"  name="email"  ng-model="email" required>
+            </label>
+            <p ng-show="signupForm.email.$invalid && !signupForm.email.$pristine" placeholder="Email">
+                <font color="#4D301C">Enter your valid email id.</font>
+            </p>
+            <div class="spacer" style="width: 283px; height: 9px;"></div>
+            <label class="item item-input" id="signUp-input9" ng-class="{ 'has-error' : signupForm.password.$invalid && !signForm.password.$pristine }">
+            <input placeholder="Password" type="password" name="password" ng-model="password"  ng-minlength="6" ng-maxlength="25" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required/>
+            </label>
+            <p ng-show="signupForm.password.$invalid && !signupForm.password.$pristine" class="help-block"><font color="#4D301C">Password must be at least 6 characters long or atleast 1 special character.</font></p>
+            <div class="spacer" style="width: 283px; height: 9px;"></div>
+            <label class="item item-input" id="signUp-input11" ng-class="{ 'has-error' : signupForm.password_confirmation.$invalid && !signupForm.password_confirmation.$pristine }">
+            <input placeholder="Coinfirm Password" type="password" name="password_confirmation" ng-model="confirmpassword" valid-password-c="password" required/>
+            </label>
+            <p ng-show="signupForm.password_confirmation.$invalid  && !signupForm.password_confirmation.$pristine" class="help-block"><font color="#4D301C">match must be previous entry.</font></p>
+        </form>
+        <button id="signUp-button5" style="color:#FFFFFF;font-style:italic;font-size:29px;border-radius:100px 100px 100px 100px;background-color: #F68120" class="button   button-block" ng-disabled="signupForm.$invalid" ng-click="signup()">Sign up!</button>
+    </ion-content>
+</ion-view>
+

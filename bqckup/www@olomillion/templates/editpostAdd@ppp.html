@@ -1,0 +1,324 @@
+<style>
+.inpt-box{
+	position: relative;
+}
+.inpt-box input{
+	width: 100%;
+	border:1px solid #ddd;
+	border-left:none;
+	padding-left:33px; 
+}
+.inpt-sign {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  color: #000000;
+  left: 1px;
+  padding: 6px 9px;
+  position: absolute;
+  top: 0;
+}
+</style>
+
+<ion-view style="background-color: rgb(245, 245, 245);" id="page13" title="Edit PostAdd">
+    <ion-content padding="true" class="has-header" ng-controller="editpostAddCtrl">
+      
+<form name="postaddform" class="list" id="postad-form1" method="post" novalidate>
+            <label class="item item-select" id="page-select1">
+                <span class="input-label">Category</span>
+   <select  ng-model="editdata.category">
+    
+        <option value="Events">Events</option>
+        <option value="Jobs">Jobs</option>
+        <option value="Goods & Services">Goods & Services</option>
+        <option value="Properties">Properties</option>
+        <option value="Missing, Lost & Found">Missing, Lost & Found</option>
+        <option value="Motors">Motors</option>
+        <option value="Magazines, chat, blog">Magazines, chat, blog</option>
+        <option value="Others Deals">Others Deals</option>
+
+    </select>
+            </label>
+            <label class="item item-select" id="page-select2">
+                <span class="input-label">Sub Category</span>
+            <select  ng-model="editdata.subcategory" >
+    
+						<option ng-if="editdata.category=='Events'">Music and Entertainment </option>
+						<option ng-if="editdata.category=='Events'">Religious </option>
+						<option ng-if="editdata.category=='Events'">Sports</option>
+						<option ng-if="editdata.category=='Events'">Educational </option>
+						<option ng-if="editdata.category=='Events'">Political </option>
+						<option ng-if="editdata.category=='Events'">Art and Culuture </option>
+						<option ng-if="editdata.category=='Events'">Social </option>
+						<option ng-if="editdata.category=='Events'">Others </option>
+
+
+						<option ng-if="editdata.category=='Jobs'">Accountancy</option>
+						<option ng-if="editdata.category=='Jobs'">Administration </option>
+						<option ng-if="editdata.category=='Jobs'">Advertising </option>
+						<option ng-if="editdata.category=='Jobs'">Aerospace/Aviation </option>
+						<option ng-if="editdata.category=='Jobs'">Agriculture </option>
+						<option ng-if="editdata.category=='Jobs'">Architecture </option>
+						<option ng-if="editdata.category=='Jobs'">Art/Design/Graphics </option>
+						<option ng-if="editdata.category=='Jobs'">Automotive </option>
+						<option ng-if="editdata.category=='Jobs'">Banking </option>
+						<option ng-if="editdata.category=='Jobs'">Biotechnology </option>
+						<option ng-if="editdata.category=='Jobs'">Catering & Food services </option>
+						<option ng-if="editdata.category=='Jobs'">Charity/Voluntary/Non-profit </option>
+						<option ng-if="editdata.category=='Jobs'">Construction </option>
+						<option ng-if="editdata.category=='Jobs'">Consultancy </option>
+						<option ng-if="editdata.category=='Jobs'">Couselling </option>
+						<option ng-if="editdata.category=='Jobs'">Customer service </option>
+						<option ng-if="editdata.category=='Jobs'">Dental </option>
+						<option ng-if="editdata.category=='Jobs'">Driving </option>
+						<option ng-if="editdata.category=='Jobs'">Education </option>
+						<option ng-if="editdata.category=='Jobs'">Electrical </option>
+						<option ng-if="editdata.category=='Jobs'">Emergency </option>
+						<option ng-if="editdata.category=='Jobs'">Engineering </option>
+						<option ng-if="editdata.category=='Jobs'">Entertainment </option>
+						<option ng-if="editdata.category=='Jobs'">Fashion </option>
+						<option ng-if="editdata.category=='Jobs'">Financial </option>
+						<option ng-if="editdata.category=='Jobs'">Graduate </option>
+						<option ng-if="editdata.category=='Jobs'">Health and safety </option>
+						<option ng-if="editdata.category=='Jobs'">Healthcare and medical </option>
+						<option ng-if="editdata.category=='Jobs'">Home worker </option>
+						<option ng-if="editdata.category=='Jobs'">Childcare </option>
+						<option ng-if="editdata.category=='Jobs'">Hotel / hospitality </option>
+						<option ng-if="editdata.category=='Jobs'">Human resources and employment</option>
+						<option ng-if="editdata.category=='Jobs'">IT/Internet/Technical </option>
+						<option ng-if="editdata.category=='Jobs'">Import Export </option>
+						<option ng-if="editdata.category=='Jobs'">Industrial </option>
+						<option ng-if="editdata.category=='Jobs'">Insuarance </option>
+						<option ng-if="editdata.category=='Jobs'">Journalism </option>
+						<option ng-if="editdata.category=='Jobs'">Legal </option>
+						<option ng-if="editdata.category=='Jobs'">Leisure </option>
+						<option ng-if="editdata.category=='Jobs'">Management & Executive </option>
+						<option ng-if="editdata.category=='Jobs'">Manufacturing </option>
+						<option ng-if="editdata.category=='Jobs'">Marketing & Public relations </option>
+						<option ng-if="editdata.category=='Jobs'">Mechanical </option>
+						<option ng-if="editdata.category=='Jobs'">Media/Creative/Digital </option>
+						<option ng-if="editdata.category=='Jobs'">Nursing </option>
+						<option ng-if="editdata.category=='Jobs'">Oil & Gas/Energy </option>
+						<option ng-if="editdata.category=='Jobs'">Other </option>
+						<option ng-if="editdata.category=='Jobs'">Packaging </option>
+						<option ng-if="editdata.category=='Jobs'">Pharmaceutical </option>
+						<option ng-if="editdata.category=='Jobs'">Photography </option>
+						<option ng-if="editdata.category=='Jobs'">Printing </option>
+						<option ng-if="editdata.category=='Jobs'">Property </option>
+						<option ng-if="editdata.category=='Jobs'">Public sector </option>
+						<option ng-if="editdata.category=='Jobs'">Publishing </option>
+						<option ng-if="editdata.category=='Jobs'">Purchasing </option>
+						<option ng-if="editdata.category=='Jobs'">Recruitment </option>
+						<option ng-if="editdata.category=='Jobs'">Retail </option>
+						<option ng-if="editdata.category=='Jobs'">Sales </option>
+						<option ng-if="editdata.category=='Jobs'">Sciencetific </option>
+						<option ng-if="editdata.category=='Jobs'">Secretarial & PA </option>
+						<option ng-if="editdata.category=='Jobs'">Security </option>
+						<option ng-if="editdata.category=='Jobs'">Social services </option>
+						<option ng-if="editdata.category=='Jobs'">Teaching </option>
+						<option ng-if="editdata.category=='Jobs'">Telecomms </option>
+						<option ng-if="editdata.category=='Jobs'">Textiles </option>
+						<option ng-if="editdata.category=='Jobs'">Trades-Skilled and unskilled </option>
+						<option ng-if="editdata.category=='Jobs'">Transports &Logistics </option>
+						<option ng-if="editdata.category=='Jobs'">Travel and tourism </option>
+						<option ng-if="editdata.category=='Jobs'">Utilities and unstalation </option>
+						<option ng-if="editdata.category=='Jobs'">Warehouse</option>
+						<option ng-if="editdata.category=='Jobs'">Waste management </option>
+
+						<option ng-if="editdata.category=='Goods & Services'">Fashion </option>
+						<option ng-if="editdata.category=='Goods & Services'">Electronics </option>
+						<option ng-if="editdata.category=='Goods & Services'">Health & Beauty </option>
+						<option ng-if="editdata.category=='Goods & Services'">Food and beverages </option>
+						<option ng-if="editdata.category=='Goods & Services'">Education </option>
+						<option ng-if="editdata.category=='Goods & Services'">Childcare </option>
+						<option ng-if="editdata.category=='Goods & Services'">Wedding </option>
+						<option ng-if="editdata.category=='Goods & Services'">Repair </option>
+						<option ng-if="editdata.category=='Goods & Services'">Business and management </option>
+						<option ng-if="editdata.category=='Goods & Services'">Accounts </option>
+						<option ng-if="editdata.category=='Goods & Services'">Legal services </option>
+						<option ng-if="editdata.category=='Goods & Services'">Administration </option>
+						<option ng-if="editdata.category=='Goods & Services'">Information technology </option>
+						<option ng-if="editdata.category=='Goods & Services'">Entertainment</option>
+						<option ng-if="editdata.category=='Goods & Services'">Supply of Goods & Services </option>
+						<option ng-if="editdata.category=='Goods & Services'">Animals </option>
+						<option ng-if="editdata.category=='Goods & Services'">Propery and maintainance </option>
+						<option ng-if="editdata.category=='Goods & Services'">Trademen and construction </option>
+						<option ng-if="editdata.category=='Goods & Services'">Transport and communication </option>
+						<option ng-if="editdata.category=='Goods & Services'">Tourism </option>
+
+
+
+						<option ng-if="editdata.category=='Properties'">For sale </option>
+						<option ng-if="editdata.category=='Properties'">To Rent </option>
+						<option ng-if="editdata.category=='Properties'">To Share </option>
+						<option ng-if="editdata.category=='Properties'">To offer </option>
+						<option ng-if="editdata.category=='Properties'">Houses /Apartments </option>
+						<option ng-if="editdata.category=='Properties'">Homes </option>
+						<option ng-if="editdata.category=='Properties'" >Students hostels</option>
+						<option ng-if="editdata.category=='Properties'">Students hostels</option>
+						<option ng-if="editdata.category=='Properties'">Students hostels</option>
+						<option ng-if="editdata.category=='Properties'">Land / Plots </option>
+						<option ng-if="editdata.category=='Properties'">Shops </option>
+						<option ng-if="editdata.category=='Properties'">Events & Sales </option>
+						<option ng-if="editdata.category=='Properties'">Others </option>
+
+
+						<option ng-if="editdata.category=='Missing, Lost & Found'">Missing </option>
+						<option ng-if="editdata.category=='Missing, Lost & Found'">Lost </option>
+						<option ng-if="editdata.category=='Missing, Lost & Found'">Found </option>
+						<option ng-if="editdata.category=='Missing, Lost & Found'">Others Dealss </option>
+
+						<option ng-if="editdata.category=='Motors'" value="car">Car </option>
+						<option ng-if="editdata.category=='Motors'" value="motorcycles">Motocycles </option>
+						<option ng-if="editdata.category=='Motors'" value="vehicles">Vehicles </option>
+						<option ng-if="editdata.category=='Motors'" value="car accessories and parts">Cars accessories and Parts </option>
+						<option ng-if="editdata.category=='Motors'" value="garage">Garage </option>
+						<option ng-if="editdata.category=='Motors'"  value="events and sales">Events and sales </option>
+						<option ng-if="editdata.category=='Motors'" value="motor deals">Motor deals </option>
+
+
+
+						<option ng-if="editdata.category=='Magazines, chat, blog'">Magazines, chat, blog </option>
+
+                        <option ng-if="editdata.category=='Others Deals'">Others Deals </option>
+         </select>    
+ </label>
+        
+
+         
+        <label>Address
+		<textarea placeholder="Address" ng-model="editdata.address" style="border:1px solid #ddd; width:100%"></textarea>
+		</label>
+
+		<ion-list id="postadd-list1"> <p>Enter your postal code </p>
+				<label id="postadd-input1" class="item item-input-wrapper" ng-class="{ 'has-error' : postaddform.pincode.$invalid && !postaddform.pincode.$pristine }">
+				<input type="text" name="pincode" class="item item-input" ng-model="editdata.postal_code" required>
+		</label>
+		<button class="button">go</button>
+		<p ng-show="postaddform.pincode.$invalid && !postaddform.pincode.$pristine" ><font color="red"> Postal code is required.</font></p>
+
+
+      <p>We won't show your postcode on the ad.</p>
+		<div style="margin-right:-20px;">
+			<p style="width:100%; height:30px;;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Seller Type</font></p>
+		</div>
+		<div >
+
+		<label> <input type="radio" value="trade" ng-model="editdata.seller_type">Trade</label><br>
+		<label>  <input type="radio" value="private" ng-model="editdata.seller_type">Private</label>
+		</div>
+			<div style="margin-right:-20px;">
+				<p style="width:100%; height:30px;font-size:15px;text-align:left; background-color:#808080;"><font color="white">Add Posting</font></p>
+			</div>
+
+
+
+
+				<!--<p  style="width:100%; height:30px;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Vehicle Specification</font></p>
+				<p >Enter the licence plate number: </p>
+				<input  type="text" name="licence" ng-model="licence">
+				<p >Enter the mileage:</p>
+				<input  type="text" placeholder="eg:41000" value="mileage" ng-model="mileage" style="border:1px solid #ddd; width:100%">
+				<input type="submit" value="Look up Details" ng-click="lookup()">
+				<p >If you can't find your registration then <a href="">enter the details manually</a></p>
+				<p  style="width:100%; height:30px;font-size:15px;text-align:left; background-color:#F68120;"> <font color="white">Price for your vehicle?</font></p>
+				<div class="inpt-box">
+				<label>
+				<span class="inpt-sign" >$</span>
+				<input  type="number" ng-model="price">
+				</label>
+				</div>
+				</div>-->
+
+	<div ng-show="editdata.subcategory=='car'||editdata.subcategory=='motorcycles'||editdata.subcategory=='vehicles'">
+			<p style="width:100%; height:30px;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Vehicle Specification</font></p>
+			<div>
+			<p  style="width:100%;" ><span align="left">Make:</span><span align="right">year:</span> </p>
+
+			<select style="width:48%; height:30px;font-size:15px;text-align:left; background-color:#F68120;" ng-model="editdata.v_make">
+
+						<option>Alpha Romeo</option>
+						<option>Aston Martin</option>
+						<option>Audi</option>
+						<option>Cadillac</option>
+						<option>Chevy</option>
+						<option>Ferrari</option>
+						<option>Ford</option>
+						<option>Range Rover</option>
+			</select>
+
+			<select style="width:48%; height:30px;font-size:15px;text-align:left; background-color:#F68120;" ng-model="editdata.v_purchase_year" >
+						<option>2016</option>
+						<option>2015</option>
+						<option>2014</option>
+						<option>2013</option>
+						<option>2012</option>
+						<option>2011</option>
+			</select>
+
+
+
+
+	  <p>Model:</p>
+	   <input type="text" style="border:1px solid #ddd; width:45%" ng-model="editdata.model">
+	   <p>Fuel Type:</p>
+	    <select align="right"  style="width:48%; height:30px;font-size:15px;text-align:left; background-color:#F68120;" ng-model="edit.fuel_type">
+			<option>Diesel</option>
+			<option>Electric</option>
+			<option>Gas</option>
+			<option>Hybrid Electric</option>
+			<option>Petrol</option>
+			<option>Other</option>
+        </select>
+		<p>Body Type:</p>
+		<select style="width:48%; height:30px;font-size:15px;text-align:left; background-color:#F68120;" ng-model="editdata.v_body_type">
+			<option>Mini Bus</option>
+			<option>Pick Up</option>
+			<option>Panel Van</option>
+			<option>Sports</option>
+			<option>Saloon</option>
+			<option>Others</option>
+
+		</select>
+	<p>Transmission:</p>
+	<select style="width:48%; height:30px;font-size:15px;text-align:left; background-color:#F68120;" ng-model="editdata.transmission">
+			<option>Automatic</option>
+			<option>Manual</option>
+			<option>Semi-Auto</option>
+			<option>Hybrid Electric</option>
+			<option>Others</option>
+	</select><br>
+	<label>Color:</label> <input type="text" style="border:1px solid #ddd; width:45%" ng-model="editdata.color">
+	<label>Engine Size (cc):</label><input type="text" style="border:1px solid #ddd; width:45%" ng-model="editdata.engine_size">
+	<label>Mileage:</label><input type="text" style="border:1px solid #ddd; width:45%" ng-model="editdata.mileage">
+
+</div>
+</div>
+
+
+
+
+
+		<div>
+		<p style="width:100%; height:30px;font-size:15px;text-align:left; background-color:#F68120;"><font color="white">Add Title</font></p>
+		<label>Title</label><input type="text" style="border:1px solid #ddd; width:100%" ng-model="editdata.ad_title">
+
+		</div>
+
+
+
+		<p>Write a short description of your ad and include all of the key highlights.</p>
+
+        <label>
+		<textarea placeholder="100 characters remaining" ng-model="editdata.short_description" style="border:1px solid #ddd; width:100%"></textarea>
+		</label>
+
+		</div>
+		<div>
+		<input type="submit" value="Next" ng-click="next(editdata.category)" style="background-color:#F68120;" >
+
+		</div></ion-list>
+		</form>
+
+
+</ion-content>
+</ion-view>

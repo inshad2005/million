@@ -1,0 +1,27 @@
+<ion-view title="Login" id="page8" style="">
+  <ion-content padding="true" class="has-header" ng-controller="loginCtrl">
+  <div class="spacer" style="width: 287px; height: 50px;"></div>
+    <form id="login-form3" class="list" name="loginForm" method="post" novalidate>
+      <ion-list id="login-list10">
+        <label class="item item-input" id="login-input1" ng-class="{ 'has-error' : loginForm.username.$invalid && !loginForm.username.$pristine }">
+          <span class="input-label">
+Email:</span>
+          <input placeholder="username" type="text" ng-model="logindata" name="username" required>
+        </label>
+        <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" ><font color="red">This Field is Required.</font></p>
+
+        <label class="item item-input" id="login-input2" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+          <span class="input-label" >Password:</span>
+          <input placeholder="password" type="password" ng-model="password" name="password" required>
+        </label>
+         <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" ><font color="red">This Field is Required.</font></p>
+
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button id="login-button5"  class="button   button-block" style="background-color:#892886" ng-click="login(data.nick_name)" ng-disabled="loginForm.$invalid"  ><font color="white">Log in</font></button>
+      <button class="button  button-block button-clear" ng-click="signup()" >
+      <font color="#892886">or Create an account--</font></button>
+      <!--<button class="button" ng-click="logout()">logout</button>-->
+    </form>
+  </ion-content>
+</ion-view>

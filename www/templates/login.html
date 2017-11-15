@@ -1,0 +1,67 @@
+
+
+<style type="text/css">
+    .popup{
+    background-color: #FFE6DC;
+    border:2px;
+    border-radius:5px;
+    }
+    .popup-head{
+    background-color: #FFE6DC;
+    font-style:italic;font-size:29px;
+    border:0 !important;
+    }
+    .popup-title{
+    background-color: #FFE6DC;
+    font-style:italic;font-size:29px;
+    }
+    .popup-body {
+    background-color: #FFE6DC;
+    font-style:italic;font-size:22px;
+    }
+    .popup-buttons .button{
+    color:#FFFFFF;font-style:italic;font-size:29px;border-radius:100px 100px 100px 100px;
+    background-color: #F68120;
+    } 
+    .popup-buttons{
+    background-color: #FFE6DC;
+    }
+</style>
+<ion-view title="Login" id="page6" style="background-color: rgb(255, 230, 220);" >
+    <!-- <ion-header-bar class="barr" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+        
+        <h1 class="title barr">Login</h1>
+        </ion-header-bar> -->
+    <ion-content padding="true" class="has-header" scroll="false" ng-controller="loginCtrl">
+        <div class="spacer" style="width: 283px; height: 27px;"></div>
+        <div>
+            <img src="img/SRTV5Q1ETMuUIAyyrMQS_login_illustration.png" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+        <button id="Login-button2" style="border-radius:100px 100px 100px 100px;color:#FFFFFF;font-style:italic;font-size:29px;" class="button button-positive  button-block" ng-click="LoginwithFacebook()">Log in with Facebook</button>
+        <div>
+            <p>
+            </p>
+            <center style="font-style:italic;font-size:19px;">
+                OR
+            </center>
+            <p></p>
+        </div>
+        <form name="loginForm" class="list" id="login-form21"  ng-submit="submitForm()" method="post" novalidate>
+            <label class="item item-input" id="Login-input1" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.firstName.$pristine }">
+            <input placeholder="Email" type="email" ng-model="user.email" name="email" required/>
+            </label>
+            <div class="spacer" style="width: 283px; height: 14px;"></div>
+            <label class="item item-input" id="Login-input2" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+            <input placeholder="password" type="password" ng-model="user.password" name="password"  required / >
+            </label>
+        </form>
+        <button id="Login-button3" style="color:#FFFFFF;font-style:italic;font-size:29px;border-radius:100px 100px 100px 100px;background-color: #F68120" class="button  button-block" ng-click="login()" ng-disabled="loginForm.$invalid">Log in!</button>
+        <div class="spacer" style="width: 283px; height: 15px;"></div>
+        <p>
+            <span ui-sref="forget" style="font-style:italic;font-size:19px;">Forgot Password ?</span>
+            <span style="float:right;font-style:italic;font-size:19px;" ui-sref="signup">Sign Up</span>
+        </p>
+    </ion-content>
+</ion-view>
+

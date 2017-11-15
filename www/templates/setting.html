@@ -1,0 +1,140 @@
+
+
+<style>
+    .srch-bar{
+    position: relative;
+    font-style:italic;
+    font-size:15px
+    }
+    .srch-bbtn{
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    width: 180px;
+    font-style:italic;
+    font-size:15px
+    }
+    .gallery {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    }
+    /*p{
+    padding: 10px;
+    }*/
+</style>
+<ion-view style="background-color: rgb(255, 230, 220);" id="page14" title="Setting">
+    <ion-content class="has-header" padding="true">
+        <div>
+            <i style="color:#F68120;">Account</i>
+            <br>
+        </div>
+        <div id="setting-container3" ng-if="logincheck=='true'">
+            <div >
+                <button style="width:40%;color:#FFFFFF; float:left;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;border-color:#F68120; padding:5px; "  ng-click="logOut()">Log Out</button>
+                <br>
+                <p style="margin-top: 20px"><span  style="color:#F68120;">Welcome : </span>  {{user}}
+                    <br>
+                <p style="margin-top: 20px"><span  style="color:#F68120;">Logged in as : </span>  {{email}}
+                </p>
+            </div>
+        </div>
+        <div id="setting-container3" ng-if="logincheck!='true'">
+            <div >
+                <button style="width:40%;color:#FFFFFF; float:left;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;border-color:#F68120;  padding:5px; "  ui-sref="login">Login</button>
+            </div>
+        </div>
+        <div style="padding-top:30px" >
+            <hr >
+        </div>
+        <div>
+            <span style="color:#F68120;">
+            App info
+            </span>
+        </div>
+        <div id="setting-container7">
+            <div>
+                <p>
+                    <span>Version</span>
+                    <br>
+                    <span>3.0.2</span>
+                </p>
+            </div>
+        </div>
+        <div>
+            <hr>
+        </div>
+        <div>
+            <span style="color:#F68120;">New to Millions opportunities? </span>
+            <p>
+                Subscribe to our newsletter and receive
+                special offers and latest news! 
+            </p>
+        </div>
+        <div id="setting-container7" style=" position: relative;">
+            <form name="userForm2" ng-submit="submitForm2()" class="list" method="post" novalidate>
+                <label style="" class="item item-input srch-bar" ng-class="{ 'has-error' : userForm2.email.$invalid && !userForm2.email.$pristine }">
+                <input placeholder="Email " type="email" name="email" ng-model="subscribe" required/>
+                </label>
+                <div class="srch-bbtn">
+                    <input type="submit" value="Subscribe" style="width:40%;float:right;font-size:12px; background-color:#F68120; box-shadow:0px 0px 2px rgba(0,0,0,.5); border:none;color:#fff;padding:5px; margin:10px" class="bbtn" ng-click="Subscribe(subscribe)" ng-disabled="userForm2.$invalid">
+                    <p ng-show="userForm2.email.$invalid && !userForm2.email.$pristine" class="help-block"><font color="red">Enter your valid email id</font></p>
+            </form>
+            </div>
+        </div>
+        <div>
+            <hr>
+        </div>
+        <div>
+            <span style="color:#F68120;">
+            Feedback
+            </span>
+        </div>
+        <div id="setting-container7">
+            <div>
+                <ion-list id="profileDetails-list15" class=" ">
+                    <ion-item id="profileDetails-list-item28" class="item item-icon-right ">Feedback : <i class="icon ion-plus-circled " style="color:#F68120" ng-click="toggle()"></i></ion-item>
+                    <div ng-show="myVar" style="width:99%" >
+                        <form name="userForm1" ng-submit="submitForm1()" class="list" method="post" novalidate>
+                            <p>How was your experience?</p>
+                            <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.expricence.$invalid && !userForm1.expricence.$pristine }">
+                            <textarea type="text" name="expricence"  ng-model="expricence"  style="width:99%" required/></textarea>
+                            </label>
+                            <p ng-show="userForm1.expricence.$invalid && !userForm1.expricence.$pristine" class="help-block"><font color="red">Enter yours experience with us</font></p>
+                            <p>Did you experience any difficulty?</p>
+                            <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.difficulty.$invalid && !userForm1.difficulty.$pristine }">
+                            <textarea type="text" name="difficulty"  ng-model="difficulty" style="width:99%" required/></textarea>
+                            </label>
+                            <p ng-show="userForm1.difficulty.$invalid && !userForm1.difficulty.$pristine" class="help-block"><font color="red">Did you experience any difficulty? please enter</font></p>
+                            <p>How can we improve our services in order to enhace your experience? </p>
+                            <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.enhace.$invalid && !userForm1.enhace.$pristine }">
+                            <textarea name="enhace"  ng-model="enhace" style="width:99%"  ng-maxlength="10" required/></textarea>
+                            </label>
+                            <p ng-show="userForm1.enhace.$invalid && !userForm1.enhace.$pristine" class="help-block"><font color="red">Enter yours suggestion </font></p>
+                            <p>Will you recommend our services to a friend? </p>
+                            <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm1.recommend.$invalid && !userForm1.recommend.$pristine }">
+                            <textarea  name="recommend"  ng-model="recommend" style="width:99%"  ng-maxlength="10" required/></textarea>
+                            </label>
+                            <p ng-show="userForm1.recommend.$invalid && !userForm1.recommend.$pristine" class="help-block"><font color="red">Will you recommend our services to a friend?</font></p>
+                            <p>Please rate our services </p>
+                            <label id="requesterSignUp-input11"  ng-class="{ 'has-error' : userForm1.rate.$invalid && !userForm1.contact.$pristine }">
+                                <ion-radio value="Bad" ng-model="radio" name="rate" required/>
+                                Bad</ion-radio>
+                                <ion-radio value="Good" ng-model="radio" name="rate" required/>
+                                Good</ion-radio>
+                                <ion-radio value="Excellent" ng-model="radio" name="rate"  required/>
+                                Excellent</ion-radio>
+                            </label>
+                            <p ng-show="userForm1.rate.$invalid && !userForm1.rate.$pristine" class="help-block"><font color="red">Enter yours rating</font></p>
+                            <button  class="button button-small button-block" style="color:#FFFFFF;float:right;font-style:italic;font-size:15px; background-color:#F68120;  border-radius:100px 100px 100px 100px;" ng-click="feedback(expricence,difficulty,enhace,recommend,radio)" ng-disabled="userForm1.$invalid">Submit</button>
+                        </form>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+        <div>
+            <hr>
+        </div>
+    </ion-content>
+</ion-view>
+

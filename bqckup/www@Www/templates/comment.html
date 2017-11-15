@@ -1,0 +1,51 @@
+<style type="text/css">
+.date { float:right
+}
+</style>
+<ion-view title="comment" id="page7" style="">
+  <ion-content padding="true" class="has-header" ng-controller="seeCommentCtrl">
+
+    <div class="list card" id="comment-card24"  ng-repeat=" x in details">
+      <ion-item class="item-avatar" id="comment-list-item52" style="" ng-repeat="(i,data) in x.post">
+
+        
+        <span style="float:left" >
+                      <font color="#892886"> {{data.users.nick_name}}name </font>: comment{{data.text}}</span><span  ng-click="toggle($index)" style="float:right"><i class = "icon icon ion-reply"></i>Reply</span>
+             
+      <div ng-show="myVar[$index]">
+                    <textarea class="rply" placeholder="reply"  ng-model="text2[$index]" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="replycomment(artical_k_liye.id, data.id, text2[$index])">reply</button>
+              </div>
+
+
+      </ion-item>
+      <div class="item item-body" id="comment-list-item-container8" style="" ng-repeat="reply in data.replies">
+        <div id="comment-markdown17" style="text-align:left;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px margin-left:30px;color:#000000;"><span style="float:left"><font color="#892886">{{data.users.nick_name}}name </font>: reply{{reply.reply}}</span>
+           <span class="date" ng-click="toggle1($index)" ><i class = "icon icon ion-reply"></i>Reply</span></p>
+     
+                 
+        </div>
+      </div>
+       <div class="item item-body" id="comment-list-item-container8" style="" ng-repeat="sub_reply in reply.subreply">
+        <div id="comment-markdown17" style="text-align:left;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px margin-left:50px;color:#000000;"><span style="float:left"><font color="#892886">{{data.users.nick_name}}name </font>:sub reply{{reply.reply}}</span>
+           <span class="date" ng-click="toggle1($index)" ><i class = "icon icon ion-reply"></i>subReply</span></p>
+     
+                 
+        </div>
+        <div ng-show="myVar1[$index]">
+                          <textarea  class="rply" placeholder="sub-reply"  ng-model="text3[$index]" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="subreplycomment(reply.id,text3[$index])">reply</button>
+                    </div>
+      </div>
+    </div>
+    <div class="list card">
+  <div class="item">
+ <form id="comment-form2" class="list">
+    
+    <textarea style="padding:15px" placeholder="...add comment here..." ng-model="text" ></textarea>
+    
+    <button id="comment-button4" style="font-size:15px;border-radius:49px 49px 49px 49px; background-color:#892886" class="button button-positive button button-small" ng-click="addcomment(details[0].id)" style="">Add Comment</button></form>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>

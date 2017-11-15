@@ -1,0 +1,12 @@
+
+
+<ion-view style="background-color: rgb(255, 230, 220);" id="page15" title="Help">
+    <ion-content class="has-header" padding="true" ng-controller="helpCtrl">
+        <p>title:{{details.title}}
+        </p>
+        <img src="http://europa.promaticstechnologies.com/million/public/img/{{details.image}}" style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
+        <p>Content: </p>
+        <div ng-bind-html="details.content"></div>
+    </ion-content>
+</ion-view>
+

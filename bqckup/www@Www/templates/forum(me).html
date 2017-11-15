@@ -1,0 +1,97 @@
+<style type="text/css">
+  .icon{
+    font-size: 5px;
+  }
+  .icon2{
+    font-size: 17px;
+    
+  }
+  .date { float:right
+}
+.icon3{ margin-left: 275px;
+  font-size: 17px;
+}
+.icon4{ margin-left: 275px;
+  font-size: 17px;
+  color:#892886;
+}
+.icon5{ margin-left: 275px;
+  font-size: 17px;
+ 
+}
+
+
+
+</style><ion-view style="" id="page14" title="Forum">
+
+  <ion-content class="has-header" padding="true" ng-controller="forumCtrl">
+  <h3>Discussion {{forum}}</h3>
+  <ion-item style="" id="forum-list-item18" class="item-icon-right">
+
+        <i  class="icon ion-chatbox" ng-click="forum1(team_id)"></i>Start Discussion Here</ion-item>
+ 
+    <div id="forum-card21" class="list card" ng-repeat="details in detail">
+   
+
+      <ion-item style="" id="forum-list-item17" class="item-avatar">
+      <img src="img/ben.png"/>
+        <h2>{{details.name}}</h2>
+        <h4>Posted on :{{details.created}}</h4>
+      </ion-item>
+      <div style="" id="forum-list-item-container10" class="item item-body">
+        <div class="show-list-numbers-and-dots" id="forum-markdown11">
+          <p style="margin-top:0px;color:#000000;">{{details.description}}
+            
+          </p>
+         
+          <i class="icon4 icon ion-thumbsup"
+          ng-click="likes(details.id)"ng-show="details.count!=null">{{details.count}}</i>
+
+           <i class="icon5 icon ion-thumbsup"
+          ng-click="likes(details.id)"ng-show="details.count==null">{{details.count}}</i>
+
+         <span class="date" ng-click="toggle($index)" ><i class = "icon2 icon ion-quote" ng-click="quote()"></i></span>
+
+          <div ng-show="myVar[$index]">
+                    <textarea class="rply" placeholder="reply"  ng-model="replytext[$index]" style="padding:10px;" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="postrply(details.id,replytext[$index])">reply</button>
+              </div>
+        </div>
+      </div>
+      <div style="" id="forum-list-item-container10" class="item item-body" >
+        <div class="show-list-numbers-and-dots" id="forum-markdown11" ng-repeat="reply in details.replies">
+         <h3 style="margin-top:0px;color:#000000;  margin-left:25px;">Reply: {{reply.name}}
+         </h3> 
+         <h4 style="margin-top:0px;color:#000000;  margin-left:25px;">Posted on :{{reply.created}}</h4>
+          <p style="margin-top:0px;color:#000000;  margin-left:25px;" >
+          {{reply.description}}
+           <span class="date" ng-click="toggle1($index)" ><i class = "icon2 icon ion-quote" ng-click="subrply()"></i></span></p>
+
+         
+          <div ng-show="myVar1[$index]">
+                    <textarea class="rply" placeholder="subreply"  ng-model="subreplytext[$index]" style="padding:10px;" ></textarea><button  class="button button-small button-clear" style="font-size:15px; background-color:#892886" ng-click="subrely(reply.id,subreplytext[$index])">reply</button>
+              </div>
+            
+          
+          
+         
+
+      <div style="" id="forum-list-item-container10" class="item item-body" >
+        <div class="show-list-numbers-and-dots" id="forum-markdown11" ng-repeat="subreply in reply.subreplies">
+         <h3 style="margin-top:0px;color:#000000;  margin-left:35px;">subReply : {{subreply.name}}</h3> 
+         <h4 style="margin-top:0px;color:#000000;  margin-left:35px;">Posted on :{{subreply.created}}</h4>
+          <p style="margin-top:0px;color:#000000;  margin-left:35px;" >
+          {{subreply.description}}</p>
+            
+          
+          </div>
+        </div>
+      </div>
+     
+      </div>
+
+
+
+      </div>
+      
+  </ion-content>
+</ion-view>

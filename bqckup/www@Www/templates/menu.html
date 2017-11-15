@@ -1,0 +1,43 @@
+
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-assertive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content ng-controller="AppCtrl">
+      <div class="side-header">
+        <div class="overlay">
+          <img src="../img/logo.png" class="avatar" alt="" ui-sref="app.home" menu-close>
+          <div class="side-caption">
+         
+            <b>Zportix</b>
+           
+            
+            <br>
+           <b>http://www.zportix.com </b><br>
+           <div ng-if="check=='bhara hai'">
+           <span><font color="white" size="3"> you are logged in as  {{ name }}</font></span><br>
+           <span class="date" ng-click="logout()" > <i class="icon ion-log-out"></i> Logout </font></span>
+           </div>
+           <div ng-if="check=='khali hai'">
+           <span class="date" ui-sref="app.login" > <i class="icon ion-log-in"></i>Login </font></span>
+           </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAGIC BEGIN -->
+      <category-tree categories="categories" title="Games" category-state="app.category"></category-tree>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
